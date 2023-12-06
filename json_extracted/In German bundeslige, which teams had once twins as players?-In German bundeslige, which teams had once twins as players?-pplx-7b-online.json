@@ -1,0 +1,40 @@
+[
+  {
+    "model": "pplx-7b-online",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "In German bundeslige, which teams had once twins as players?"
+      }
+    ]
+  },
+  {
+    "id": "1532e419-cde0-4c12-b408-be7706e21904",
+    "model": "pplx-7b-online",
+    "created": 7879132,
+    "usage": {
+      "prompt_tokens": 45,
+      "completion_tokens": 199,
+      "total_tokens": 244
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "In the German Bundesliga, there have been several instances of twins playing for the same team. Some notable examples include:\n\n1. **Helmut and Erwin Kremers**: These identical twins played together in the Bundesliga, with Erwin Kremers joining Helmut Kremers at Borussia Mönchengladbach and later at FC Schalke 04. They are the first-ever twins to play in the Bundesliga.\n\n2. **Lars and Sven Bender**: These twins, who are siblings, played together at Bayer Leverkusen before retiring in 2020. They are the second set of twins to play for the same Bundesliga team.\n\nThese players demonstrate the unique bond between siblings who share the same genetic makeup, contributing to their success on the field and their special connection off it.\n"
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "model": "llama-2-70b-chat",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "In German bundeslige, which teams had once twins as players?"
+      }
+    ]
+  },
+  {
+    "id": "acea5323-f4b9-448c-be96-46fc749ddecc",
+    "model": "llama-2-70b-chat",
+    "created": 7879120,
+    "usage": {
+      "prompt_tokens": 148,
+      "completion_tokens": 33,
+      "total_tokens": 181
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "Bayern Munich, Borussia Dortmund, and Schalke 04 have all had twin players on their teams at some point in their history."
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]

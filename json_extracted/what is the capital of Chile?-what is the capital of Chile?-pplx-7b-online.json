@@ -1,0 +1,40 @@
+[
+  {
+    "model": "pplx-7b-online",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "what is the capital of Chile?"
+      }
+    ]
+  },
+  {
+    "id": "b0acb2a3-ce05-46e3-b260-8c13e9040187",
+    "model": "pplx-7b-online",
+    "created": 7876304,
+    "usage": {
+      "prompt_tokens": 37,
+      "completion_tokens": 171,
+      "total_tokens": 208
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "The capital of Chile is Santiago, which is also the largest city in the country and one of the largest cities in the Americas. It is located in the country's central valley and is the center of the Santiago Metropolitan Region, which has a population of 7 million, representing 40% of Chile's total population. Santiago was founded in 1541 by the Spanish conquistador Pedro de Valdivia and has served as the capital city of Chile since colonial times. The city is known for its 19th-century neoclassical architecture, winding side-streets, and several stand-alone hills and the fast-flowing Mapocho River, which is lined by parks such as Parque Forestal and Balmaceda Park.\n"
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]

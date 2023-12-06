@@ -1,0 +1,40 @@
+[
+  {
+    "model": "mistral-7b-instruct",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "what is the capital of Chile?"
+      }
+    ]
+  },
+  {
+    "id": "a9925206-9ee7-4b2a-88db-48f219bcbc28",
+    "model": "mistral-7b-instruct",
+    "created": 7877210,
+    "usage": {
+      "prompt_tokens": 126,
+      "completion_tokens": 7,
+      "total_tokens": 133
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "The capital of Chile is Santiago."
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]

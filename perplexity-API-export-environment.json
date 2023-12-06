@@ -1,0 +1,27 @@
+{
+  "environment": {
+    "id": "ae5d3cc7-d7f7-450b-8737-c95a7b9e8f85",
+    "name": "Perplexity-API",
+    "owner": "137056",
+    "createdAt": "2023-10-05T21:52:07.000Z",
+    "updatedAt": "2023-11-30T18:21:49.000Z",
+    "values": [
+      { "key": "PERPLEXITY_API_KEY", "value": "perplexity_api_key", "enabled": true, "type": "default" },
+      {
+        "key": "models",
+        "value": "[ { \"Model\": \"codellama-34b-instruct\",\n        \"Context Length\": 16384,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"llama-2-70b-chat\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"mistral-7b-instruct\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-7b-chat\",\n        \"Context Length\": 8192,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-70b-chat\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-7b-online\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-70b-online\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    }\n]",
+        "enabled": false,
+        "type": "default"
+      },
+      { "key": "model", "value": "codellama-34b-instruct", "enabled": false, "type": "default" },
+      { "key": "model", "value": "llama-2-70b-chat", "enabled": false, "type": "default" },
+      { "key": "model", "value": "mistral-7b-instruct", "enabled": false, "type": "default" },
+      { "key": "model", "value": "pplx-7b-chat", "enabled": false, "type": "default" },
+      { "key": "model", "value": "pplx-70b-chat", "enabled": false, "type": "default" },
+      { "key": "model", "value": "pplx-7b-online", "enabled": false, "type": "default" },
+      { "key": "model", "value": "pplx-70b-online", "enabled": true, "type": "default" },
+      { "key": "baseUrl", "value": "https://api.perplexity.ai", "enabled": true, "type": "default" }
+    ],
+    "isPublic": false
+  }
+}

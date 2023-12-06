@@ -1,0 +1,40 @@
+[
+  {
+    "model": "pplx-7b-chat",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "In German bundeslige, which teams had once twins as players?"
+      }
+    ]
+  },
+  {
+    "id": "8461f489-28f2-478b-858b-2cd0de919b3d",
+    "model": "pplx-7b-chat",
+    "created": 7879120,
+    "usage": {
+      "prompt_tokens": 136,
+      "completion_tokens": 159,
+      "total_tokens": 295
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "There have been two instances in the history of German Bundesliga where teams had twin brothers as players. The first instance was in 2010, when Dinamo Dresden had twin brothers, Sierak and Michael Through the, in their squad. The second instance was in 2012, when Schalke 04 had twin brothers, Simon and Jonathan Poulsen, in their squad. Both pair of twins are German-Danish, and they have played together in various positions on the field. Sierak Through has played as a defensive midfielder, while Michael has played as a striker. Simon Poulsen has played as a defensive midfielder, while Jonathan has played as a central midfielder.\n"
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,40 @@
+[
+  {
+    "model": "pplx-70b-online",
+    "messages": [
+      {
+        "role": "system",
+        "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+      },
+      {
+        "role": "user",
+        "content": "In German bundeslige, which teams had once twins as players?"
+      }
+    ]
+  },
+  {
+    "id": "afd26cbc-15fd-4660-b28b-71393f2ca4fe",
+    "model": "pplx-70b-online",
+    "created": 7879132,
+    "usage": {
+      "prompt_tokens": 48,
+      "completion_tokens": 194,
+      "total_tokens": 242
+    },
+    "object": "chat.completion",
+    "choices": [
+      {
+        "index": 0,
+        "finish_reason": "stop",
+        "message": {
+          "role": "assistant",
+          "content": "In the German Bundesliga, there have been several pairs of twins who played as players. Some notable examples include:\n\n1. Helmut and Erwin Kremers: They are the first-ever twins to play in the Bundesliga and played together regularly.\n2. Lars and Sven Bender: These twins played for Bayer Leverkusen and Borussia Dortmund, respectively, and were the first twins to start for Germany in 39 years when they played together in a friendly match against the USA in 2013.\n3. Kevin-Prince and Jerome Boateng: Both brothers played in the Bundesliga, with Kevin-Prince playing for Hertha Berlin and Jerome playing for Bayern Munich.\n\nThese twins have made significant contributions to the German football scene and have left a lasting impact on the sport.\n"
+        },
+        "delta": {
+          "role": "assistant",
+          "content": ""
+        }
+      }
+    ]
+  }
+]
