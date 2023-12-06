@@ -13,6 +13,7 @@ On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16)
 nvm current
 nvm use 16
 npm i -g newman
+npm install -g newman-reporter-htmlextra
 ```
 
 ## Running the collection remotely, and exporting the collection settings
@@ -39,11 +40,10 @@ export pplx_api_key=pplx-........................
 
 # extract the api key from the environment file, 
 environment_file=perplexity-API-export-environment.json
-pplx_api_key=$(<  $environment_file jq -r '.environment.values[] | select(.key=="PERPLEX
-ITY_API_KEY") | .value')
+pplx_api_key=$(<  $environment_file jq -r '.environment.values[] | select(.key=="PERPLEXITY_API_KEY") | .value')
 echo "PERPLEXITY_API_KEY=$pplx_api_key" >> .env
 # optional
-export PERPLEXITY_API_KEY=$(cat .env | grep PERPLEXITY_API_KEY | cut -d= -f2)
+export perplexity_api_key=$(cat .env | grep PERPLEXITY_API_KEY | cut -d= -f2)
 #now set as env variable, then run shellscript with that ENV variable
 ```
 

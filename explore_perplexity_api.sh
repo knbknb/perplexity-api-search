@@ -8,13 +8,15 @@
 # extract environemnt info into a file
 collection_file="Perplexity API export.postman_collection.json"
 environment_file="perplexity-API-export-environment.json"
+modif_environment_file="perplexity-API-export-environment-with-cleartext-key.json"
+
 html_outdir=newman
 json_outdir=json_extracted
 query_dir="queries"
 
 # needed
 
-
+<"$environment_file" jq --arg PERPLEXITY_API_KEY "$PERPLEXITY_API_KEY" '.environment.values[0].value |= $PERPLEXITY_API_KEY' > "$modif_environment_file"
 
 models=$(< $environment_file jq -r '.environment.values[] | select(.key=="model") | .value ')
 prompt_json=$(jq <<EOF
@@ -23,7 +25,7 @@ prompt_json=$(jq <<EOF
     "messages": [
         {
             "role": "system",
-            "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users am extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
+            "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users are extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
         },
         {
             "role": "user",
@@ -37,7 +39,8 @@ EOF
 #PROMPT="at which locations was the Film 'Nosferatu' from 1979 shot?"
 
 #PROMPT="In jq, what are the idioms beginning with the @ symbol called?"
-PROMPT="In German bundeslige, which teams had once twins as players?"
+#PROMPT="In German bundeslige, which teams had once twins as players?"
+PROMPT="Why do some professional athletes injure themselves during simple tasks like warming up?"
 # use jq to replace the MODEL in the prompt_json
 for model in $models; do
     prompt_json=$(echo "$prompt_json" | jq --arg MODEL "$model" '.model |= $MODEL')
@@ -57,7 +60,7 @@ for model in $models; do
 
     report="newman/$PROMPT-$model-$(date +%Y-%m-%d-%H-%M-%S).html"
     echo "Running $modif_collection_file"
-    newman run "$modif_collection_file" -e "$environment_file" \
+    newman run "$modif_collection_file" -e "$modif_environment_file" \
         -r htmlextra \
         --reporter-htmlextra-export "$report" \
         --reporter-htmlextra-skipHeaders "Authorization" \
@@ -85,4 +88,10 @@ for model in $models; do
 done
 echo "$PROMPT"
 
-#ls -1 json_extracted/*jq* | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\"" | fmt
+cat <<'EOF'
+# now run this to see the results, extracted from the json files
+ls -1 json_extracted/*PROMPT_SUBSTRING* \
+  | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\""
+EOF
+
+#ls -1 json_extracted/*PROMPT_SUBSTRING* | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\"" | fmt
