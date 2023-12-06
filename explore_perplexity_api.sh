@@ -35,12 +35,17 @@ prompt_json=$(jq <<EOF
 }
 EOF
 )
+# if ENV variable is not set, exit with error
+: "${PERPLEXITY_API_KEY:?Need to set env var PERPLEXITY_API_KEY non-empty}"
 
 #PROMPT="at which locations was the Film 'Nosferatu' from 1979 shot?"
 
 #PROMPT="In jq, what are the idioms beginning with the @ symbol called?"
 #PROMPT="In German bundeslige, which teams had once twins as players?"
-PROMPT="Why do some professional athletes injure themselves during simple tasks like warming up?"
+#PROMPT="Why do some professional athletes injure themselves during simple tasks like warming up?"
+#PROMPT="In web development, what is the difference between the MVC pattern and the MVVM pattern?"
+#PROMPT="How to setup the CLI tool  schemacrawler  with ChatGPT?"
+PROMPT="what is ncurses and how does it relate to readline?"
 # use jq to replace the MODEL in the prompt_json
 for model in $models; do
     prompt_json=$(echo "$prompt_json" | jq --arg MODEL "$model" '.model |= $MODEL')
@@ -80,18 +85,26 @@ for model in $models; do
     < "$json_outfile.json" jq -rs "." > "$json_outfile"
     rm "$json_outfile.json"
     
+    #jq -r '["##### ", .[1].model, "\n\n", .[1].choices[0].message.content, "\n\n"] | join("")' \
     # output the relevant fields to the shell
-    < "$json_outfile" \
-    jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(":        ")' \
-    | fmt
-    #< "$json_outfile" gron
+    if [ ! -s "$json_outfile" ]; then
+        echo ""
+        echo "ERROR: $json_outfile is empty (?)"
+        echo ""
+    else 
+        < "$json_outfile" \
+        jq -r '["##### ", .[1].model, "\n\n", .[1].choices[0].message.content, "\n\n"] | join("")' \
+        | fmt
+    fi
 done
 echo "$PROMPT"
 
 cat <<'EOF'
 # now run this to see the results, extracted from the json files
 ls -1 json_extracted/*PROMPT_SUBSTRING* \
-  | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\""
+  | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\" \
+  | fmt" \
+  | pandoc -f markdown -t html | lynx -stdin
 EOF
 
 #ls -1 json_extracted/*PROMPT_SUBSTRING* | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\"" | fmt
