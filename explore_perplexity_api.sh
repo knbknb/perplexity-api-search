@@ -5,7 +5,8 @@
 # does not quite work - save/export the collection manually
 # newman run https://api.getpostman.com/collections/137056-d7f808d2-27dd-4525-8869-a42de46af4cb?apikey=$apikey
 
-# extract environemnt info into a file
+# works
+# after extracting environment info into a .json file
 collection_file="Perplexity API export.postman_collection.json"
 environment_file="perplexity-API-export-environment.json"
 modif_environment_file="perplexity-API-export-environment-with-cleartext-key.json"
@@ -19,7 +20,18 @@ query_dir="queries"
 <"$environment_file" jq --arg PERPLEXITY_API_KEY "$PERPLEXITY_API_KEY" '.environment.values[0].value |= $PERPLEXITY_API_KEY' > "$modif_environment_file"
 
 models=$(< $environment_file jq -r '.environment.values[] | select(.key=="model") | .value ')
-prompt_json=$(jq <<EOF
+
+# if ENV variable is not set, exit with error
+: "${PERPLEXITY_API_KEY:?Need to set/export env var PERPLEXITY_API_KEY non-empty}"
+
+#PROMPT="what is ncurses and how does it relate to readline?"
+PRSHORT="user-acceptance-testing"
+PROMPT=$(cat <<EOP
+in agile development, what types of documents are required for user acceptance testing?
+EOP
+)
+
+custom_instruction=$(jq <<EOF
 {
     "model": "MODEL",
     "messages": [
@@ -29,82 +41,112 @@ prompt_json=$(jq <<EOF
         },
         {
             "role": "user",
-            "content": "PROMPT"
+            "content": "$PROMPT"
         }
     ]
 }
 EOF
 )
-# if ENV variable is not set, exit with error
-: "${PERPLEXITY_API_KEY:?Need to set env var PERPLEXITY_API_KEY non-empty}"
-
-#PROMPT="at which locations was the Film 'Nosferatu' from 1979 shot?"
-
-#PROMPT="In jq, what are the idioms beginning with the @ symbol called?"
-#PROMPT="In German bundeslige, which teams had once twins as players?"
-#PROMPT="Why do some professional athletes injure themselves during simple tasks like warming up?"
-#PROMPT="In web development, what is the difference between the MVC pattern and the MVVM pattern?"
-#PROMPT="How to setup the CLI tool  schemacrawler  with ChatGPT?"
-PROMPT="what is ncurses and how does it relate to readline?"
-# use jq to replace the MODEL in the prompt_json
-for model in $models; do
-    prompt_json=$(echo "$prompt_json" | jq --arg MODEL "$model" '.model |= $MODEL')
-    # use jq to replace the PROMPT in the prompt_json
-    prompt_json=$(echo "$prompt_json" | jq --arg PROMPT "$PROMPT" '.messages[1].content |= $PROMPT')
-    echo "$prompt_json" 
-
-    # for each model, write new collection files with the "prompt_json" json-encoded 
-    # in place of the "prompt" variable in the collection file
-    modif_collection_file="$query_dir/$PROMPT-$model.json"
-    echo "Writing $modif_collection_file"
-    <"$collection_file" jq --arg RAW "$prompt_json" '.item[0].request.body.raw |= $RAW' > "$modif_collection_file"
-    # open the file and replace the value of .item[0].name with $prompt
-    cp "$modif_collection_file" "$modif_collection_file.json"
-    < "$modif_collection_file.json" jq --arg PROMPT "$PROMPT" '.item[0].name |= $PROMPT' > "$modif_collection_file"
-    rm "$modif_collection_file.json"
-
-    report="newman/$PROMPT-$model-$(date +%Y-%m-%d-%H-%M-%S).html"
-    echo "Running $modif_collection_file"
-    newman run "$modif_collection_file" -e "$modif_environment_file" \
-        -r htmlextra \
-        --reporter-htmlextra-export "$report" \
-        --reporter-htmlextra-skipHeaders "Authorization" \
-        --reporter-htmlextra-browserTitle "$model: $prompt" \
-        --reporter-htmlextra-title "$model: $prompt"
 
 
-    file_name=$(basename "$modif_collection_file")
-    base_name="$PROMPT-${file_name%.*}"
-    json_outfile="$json_outdir/$base_name.json"
-    echo "'$json_outfile' written (JSON response)"
+# Function to process JSON file
+create_json_array_from_file() {
+    local json_file="$1"
 
-    xidel --input "$report" --html -s -e  "//code/text()" \
-        | tail -n +3 \
-        | head -n -1 > "$json_outfile"
-    cp "$json_outfile" "$json_outfile.json"
-    < "$json_outfile.json" jq -rs "." > "$json_outfile"
-    rm "$json_outfile.json"
-    
-    #jq -r '["##### ", .[1].model, "\n\n", .[1].choices[0].message.content, "\n\n"] | join("")' \
-    # output the relevant fields to the shell
-    if [ ! -s "$json_outfile" ]; then
-        echo ""
-        echo "ERROR: $json_outfile is empty (?)"
-        echo ""
-    else 
-        < "$json_outfile" \
-        jq -r '["##### ", .[1].model, "\n\n", .[1].choices[0].message.content, "\n\n"] | join("")' \
-        | fmt
-    fi
-done
-echo "$PROMPT"
+    cp "$json_file" "$json_file.json"
+    < "$json_file.json" jq -rs "." > "$json_file"
+    rm "$json_file.json"
+}
 
-cat <<'EOF'
+write_json_output_to_stdout() {
+        local json_outfile="$1"
+
+        if [ ! -s "$json_outfile" ]; then
+            echo ""
+            echo "ERROR: $json_outfile is empty (?)"
+            echo ""
+        else 
+            < "$json_outfile" \
+            jq -r '["##### ", .[1].model, "\n\n", .[1].choices[0].message.content, "\n\n"] | join("")' \
+            | fmt
+        fi
+}
+
+# Function to generate shell pipeline code 
+# for pretty-printing formatted text encoded in from JSON files
+display_all_results() {
+        local prshort="$1"
+        cat <<EOF
 # now run this to see the results, extracted from the json files
-ls -1 json_extracted/*PROMPT_SUBSTRING* \
-  | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\" \
-  | fmt" \
-  | pandoc -f markdown -t html | lynx -stdin
+< json_all/*$prshort*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
+ | pandoc -f markdown -t html | lynx -stdin -dump > json_all/$prshort.txt
+or
+fmt json_all/*$prshort*.json  
+    
 EOF
+}
 
-#ls -1 json_extracted/*PROMPT_SUBSTRING* | xargs -i bash -c "jq -r '[.[1].model, .[1].choices[0].message.content, \"\n\n\"] | join(\":        \")'  \"{}\"" | fmt
+for model in $models; do
+    # use jq to replace the MODEL in the custom_instruction
+    prompt_json=$(echo "$custom_instruction" | jq --arg MODEL "$model" '.model |= $MODEL')
+    # use jq to replace the PROMPT in the custom_instruction
+    #echo "$prompt_json" 
+   
+    query_file="$query_dir/$PRSHORT--$model.json"
+    #echo "Writing $query_file"    
+    <"$collection_file" jq --arg RAW "$prompt_json" --arg NAME "$model" '.item[0].request.body.raw |= $RAW | .name |= $NAME' > "$query_file"
+      
+   #
+   #report="newman/$PRSHORT--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
+   report="newman/$PRSHORT--$model.html"
+
+   echo "$model: Running collection $query_file"
+   #newman run "$query_file" -e "$modif_environment_file" \
+   #    -r htmlextra \
+   #    --reporter-htmlextra-export "$report" \
+   #    --reporter-htmlextra-skipHeaders "Authorization" \
+   #    --reporter-htmlextra-browserTitle "$model: $prompt" \
+   #    --reporter-htmlextra-title "$model: $prompt"
+
+
+   file_name=$(basename "$query_file")
+   base_name="${file_name%.*}"
+   json_outfile="$json_outdir/$base_name.json"
+   if [ ! -f "$report" ]; then
+       echo "Skipping $report"
+       continue
+   else 
+     xidel --input "$report" --html -s -e  "//code/text()" \
+       | tail -n +3 \
+       | head -n -1 > "$json_outfile" 
+   fi
+
+
+   ## turn 2 JSON fragments into 1 proper JSON array
+   create_json_array_from_file "$json_outfile"
+   ## inform user
+   #write_json_output_to_stdout "$json_outfile"
+
+done
+
+# json to html to pretty printed text
+finalize_json_files() {
+    local prshort="$1"
+    local outfile="json_all/$prshort.json"
+
+    rm "$outfile" 2>/dev/null
+    ls -1 json_extracted/*"$prshort"*.json | xargs -i bash -c "jq -rs < \"{}\"  >> $outfile"
+    create_json_array_from_file "$outfile"
+    cp "$outfile" "$outfile.json"
+    < "$outfile.json" jq '[.[].[]]' > "$outfile"
+    rm "$outfile.json"
+    < "$outfile" jq -r '.[]| ["<hr>## ", .[0].model, "<hr>\n\n", .[].choices[0].message.content, "\n\n"] | join(" ")' \
+    | pandoc -f markdown -t html | lynx -stdin -dump | fmt > "json_all/$prshort.txt"
+}
+
+# Call the new function
+finalize_json_files "$PRSHORT"
+##display_all_results "$PRSHORT"
+
+
+
