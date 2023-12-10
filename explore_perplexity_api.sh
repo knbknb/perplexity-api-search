@@ -2,34 +2,69 @@
 # Use Postman and Newman (Postman CLI) to explore the Perplexity API
 #
 
-# does not quite work - save/export the collection manually
-# newman run https://api.getpostman.com/collections/137056-d7f808d2-27dd-4525-8869-a42de46af4cb?apikey=$apikey
+## Command line arguments
+## You must set a short prompt fragment, e.g. "user-acceptance-testing" (omit whitespace),
+## and a longer prompt with the actual question or task
+
+# example usage:
+# . ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"
+PRSLUG="prompt-slug"
+PROMPT="your question or task"
+while [[ "$#" -gt 0 ]]; do
+    case $1 in
+        --prompt)
+            PROMPT=$2
+            shift
+            ;;
+        --slug)
+            PRSLUG=$2
+            shift
+            ;;
+        *)
+            echo '. ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"'
+            echo "Invalid option: $1" >&2
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+#shift $((OPTIND-1))
+# Check if PROMPT is empty
+if [ -z "$PROMPT" ]; then
+    echo "Missing required argument: -p PROMPT" >&2
+    exit 1
+else 
+    echo "Using prompt -p '$PROMPT'"
+fi
+
+# Check if PRSLUG is empty
+if [ -z "$PRSLUG" ]; then
+    echo "Missing required argument: -prompt '...'" >&2
+    exit 1
+else
+    echo "Using PRSLUG (prompt-fragment) --slug '$PRSLUG'"
+fi
+read -p "Press enter to continue"
 
 # works
-# after extracting environment info into a .json file
+# manual prerequisite one-off task: extract Postman environment info into a .json file
 collection_file="Perplexity API export.postman_collection.json"
 environment_file="perplexity-API-export-environment.json"
+# this file should NOT be checked into git - contains the API key
 modif_environment_file="perplexity-API-export-environment-with-cleartext-key.json"
 
 html_outdir=newman
 json_outdir=json_extracted
 query_dir="queries"
 
-# needed
-
+# write API key to environment file
 <"$environment_file" jq --arg PERPLEXITY_API_KEY "$PERPLEXITY_API_KEY" '.environment.values[0].value |= $PERPLEXITY_API_KEY' > "$modif_environment_file"
 
 models=$(< $environment_file jq -r '.environment.values[] | select(.key=="model") | .value ')
 
 # if ENV variable is not set, exit with error
 : "${PERPLEXITY_API_KEY:?Need to set/export env var PERPLEXITY_API_KEY non-empty}"
-
-#PROMPT="what is ncurses and how does it relate to readline?"
-PRSHORT="user-acceptance-testing"
-PROMPT=$(cat <<EOP
-in agile development, what types of documents are required for user acceptance testing?
-EOP
-)
 
 custom_instruction=$(jq <<EOF
 {
@@ -75,13 +110,13 @@ write_json_output_to_stdout() {
 # Function to generate shell pipeline code 
 # for pretty-printing formatted text encoded in from JSON files
 display_all_results() {
-        local prshort="$1"
+        local slug="$1"
         cat <<EOF
 # now run this to see the results, extracted from the json files
-< json_all/*$prshort*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
- | pandoc -f markdown -t html | lynx -stdin -dump > json_all/$prshort.txt
+< json_all/*$slug*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
+ | pandoc -f markdown -t html | lynx -stdin -dump > json_all/$slug.txt
 or
-fmt json_all/*$prshort*.json  
+fmt json_all/*$slug*.json  
     
 EOF
 }
@@ -92,21 +127,21 @@ for model in $models; do
     # use jq to replace the PROMPT in the custom_instruction
     #echo "$prompt_json" 
    
-    query_file="$query_dir/$PRSHORT--$model.json"
+    query_file="$query_dir/$PRSLUG--$model.json"
     #echo "Writing $query_file"    
     <"$collection_file" jq --arg RAW "$prompt_json" --arg NAME "$model" '.item[0].request.body.raw |= $RAW | .name |= $NAME' > "$query_file"
       
    #
-   #report="newman/$PRSHORT--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
-   report="newman/$PRSHORT--$model.html"
+   #report="newman/$PRSLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
+   report="newman/$PRSLUG--$model.html"
 
    echo "$model: Running collection $query_file"
-   #newman run "$query_file" -e "$modif_environment_file" \
-   #    -r htmlextra \
-   #    --reporter-htmlextra-export "$report" \
-   #    --reporter-htmlextra-skipHeaders "Authorization" \
-   #    --reporter-htmlextra-browserTitle "$model: $prompt" \
-   #    --reporter-htmlextra-title "$model: $prompt"
+   newman run "$query_file" -e "$modif_environment_file" \
+       -r htmlextra \
+       --reporter-htmlextra-export "$report" \
+       --reporter-htmlextra-skipHeaders "Authorization" \
+       --reporter-htmlextra-browserTitle "$model: $prompt" \
+       --reporter-htmlextra-title "$model: $prompt"
 
 
    file_name=$(basename "$query_file")
@@ -131,22 +166,21 @@ done
 
 # json to html to pretty printed text
 finalize_json_files() {
-    local prshort="$1"
-    local outfile="json_all/$prshort.json"
+    local slug="$1"
+    local outfile="json_all/$slug.json"
 
     rm "$outfile" 2>/dev/null
-    ls -1 json_extracted/*"$prshort"*.json | xargs -i bash -c "jq -rs < \"{}\"  >> $outfile"
+    ls -1 json_extracted/*"$slug"*.json | xargs -i bash -c "jq -rs < \"{}\"  >> $outfile"
     create_json_array_from_file "$outfile"
     cp "$outfile" "$outfile.json"
     < "$outfile.json" jq '[.[].[]]' > "$outfile"
     rm "$outfile.json"
     < "$outfile" jq -r '.[]| ["<hr>## ", .[0].model, "<hr>\n\n", .[].choices[0].message.content, "\n\n"] | join(" ")' \
-    | pandoc -f markdown -t html | lynx -stdin -dump | fmt > "json_all/$prshort.txt"
+    | pandoc -f markdown -t html | lynx -stdin -dump | fmt > "json_all/$slug.txt"
 }
 
-# Call the new function
-finalize_json_files "$PRSHORT"
-##display_all_results "$PRSHORT"
+finalize_json_files "$PRSLUG"
+##display_all_results "$PRSLUG"
 
 
 

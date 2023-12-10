@@ -16,6 +16,7 @@
       { "key": "model", "value": "codellama-34b-instruct", "enabled": false, "type": "default" },
       { "key": "model", "value": "llama-2-70b-chat", "enabled": false, "type": "default" },
       { "key": "model", "value": "mistral-7b-instruct", "enabled": false, "type": "default" },
+      { "key": "model", "value": "mixtral-8x7b", "enabled": false, "type": "default" },
       { "key": "model", "value": "pplx-7b-chat", "enabled": false, "type": "default" },
       { "key": "model", "value": "pplx-70b-chat", "enabled": false, "type": "default" },
       { "key": "model", "value": "pplx-7b-online", "enabled": false, "type": "default" },
