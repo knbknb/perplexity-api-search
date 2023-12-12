@@ -6,9 +6,9 @@
 
 See Shell Script `explore_perlplexity_api.sh` - work in progress
 
-##### Example call:
+#### Example call:
 
-(A question about skeleton bob sled racing.)
+##### (A question about Skeleton Bobsled Racing.)
 
 ```bash
 export PERPLEXITY_API_KEY=pplx-....
@@ -18,10 +18,11 @@ export PERPLEXITY_API_KEY=pplx-....
 
 ##### Example output:
 
-Shell output (when running the script, not the API response):
+Shell output when running the script. (This is not the API response):
 
 ```text
 Using prompt -p 'In which years became skeleton sleigh racing olympic?'
+
 Using SLUG (prompt-fragment) --slug 'sleigh-racing'
 Press enter to continue
 codellama-34b-instruct: Running collection queries/sleigh-racing--codellama-34b-instruct.json
@@ -36,6 +37,8 @@ pplx-70b-online:        Running collection queries/sleigh-racing--pplx-70b-onlin
 ##### API response:
 
 ##### (Converted to pretty textfile:)
+
+Various intermediate htmlfiles and jsonfiles are created, but the final output is a pretty textfile.
 
 See `json_all/sled-racing.txt` (coming soon)
 
