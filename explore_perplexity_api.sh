@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Use Postman and Newman (Postman CLI) to explore the Perplexity API
-#
+# Use Postman and Newman (Postman CLI) to explore the Perplexity API.
+# Requires obscure command-line tools newman, xidel, and jq version 1.7
 
 ## Command line arguments
 ## You must set a short prompt fragment, e.g. "user-acceptance-testing" (omit whitespace),
@@ -32,10 +32,10 @@ done
 #shift $((OPTIND-1))
 # Check if PROMPT is empty
 if [ -z "$PROMPT" ]; then
-    echo "Missing required argument: -p PROMPT" >&2
+    echo "Missing required argument: --prompt PROMPT" >&2
     exit 1
 else 
-    echo "Using prompt -p '$PROMPT'"
+    echo "Using prompt --prompt '$PROMPT'"
 fi
 
 # Check if PRSLUG is empty
@@ -46,7 +46,7 @@ else
     echo "Using PRSLUG (prompt-fragment) --slug '$PRSLUG'"
 fi
 read -p "Press enter to continue"
-
+mkdir -p queries json_extracted newman json_all
 # works
 # manual prerequisite one-off task: extract Postman environment info into a .json file
 collection_file="Perplexity API export.postman_collection.json"
@@ -84,8 +84,8 @@ EOF
 )
 
 
-# Function to process JSON file
-create_json_array_from_file() {
+# uses jq -rs to wrap everything into an enclosing array
+enclose_filecontent_in_array() {
     local json_file="$1"
 
     cp "$json_file" "$json_file.json"
@@ -158,9 +158,9 @@ for model in $models; do
 
 
    ## turn 2 JSON fragments into 1 proper JSON array
-   create_json_array_from_file "$json_outfile"
+   enclose_filecontent_in_array "$json_outfile"
    ## inform user
-   #write_json_output_to_stdout "$json_outfile"
+   write_json_output_to_stdout "$json_outfile"
 
 done
 
@@ -171,8 +171,9 @@ finalize_json_files() {
 
     rm "$outfile" 2>/dev/null
     ls -1 json_extracted/*"$slug"*.json | xargs -i bash -c "jq -rs < \"{}\"  >> $outfile"
-    create_json_array_from_file "$outfile"
+    enclose_filecontent_in_array "$outfile"
     cp "$outfile" "$outfile.json"
+    # requires jq 1.7
     < "$outfile.json" jq '[.[].[]]' > "$outfile"
     rm "$outfile.json"
     < "$outfile" jq -r '.[]| ["<hr>## ", .[0].model, "<hr>\n\n", .[].choices[0].message.content, "\n\n"] | join(" ")' \
@@ -181,6 +182,4 @@ finalize_json_files() {
 
 finalize_json_files "$PRSLUG"
 ##display_all_results "$PRSLUG"
-
-
 

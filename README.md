@@ -1,8 +1,8 @@
-<!-- markdownlint-disable MD001 -->
+<!-- markdownlint-disable MD001 MD022 MD026  -->
 # Querying the Perplexity API with Newman and Postman
 
-Using shell script `explore_perlplexity_api.sh`, send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.
-Collect the responses and put them in a pretty textfile.
+##### Send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
+##### Collect the responses and put them in a pretty textfile.
 
 See Shell Script `explore_perlplexity_api.sh` - work in progress
 
@@ -33,9 +33,11 @@ pplx-7b-online:         Running collection queries/sleigh-racing--pplx-7b-online
 pplx-70b-online:        Running collection queries/sleigh-racing--pplx-70b-online.json
 ```
 
-API response:
+##### API response:
 
-See `json_all/sled-racing.txt`
+##### (Converted to pretty textfile:)
+
+See `json_all/sled-racing.txt` (coming soon)
 
 ```text
      __________________________________________________________________
