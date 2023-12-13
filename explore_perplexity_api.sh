@@ -176,8 +176,21 @@ finalize_json_files() {
     # requires jq 1.7
     < "$outfile.json" jq '[.[].[]]' > "$outfile"
     rm "$outfile.json"
+    # add the question to the top of the file
+    question=$(< "$outfile" grep '"role": "user"' -A 1  | tail -1)
+    # Trim leading whitespace
+    question="${question#"${question%%[![:space:]]*}"}"
+    echo "# $question" > "json_all/$slug.txt"
+    
+    # ! ---> write answers to file, nicely human readable
     < "$outfile" jq -r '.[]| ["<hr>## ", .[0].model, "<hr>\n\n", .[].choices[0].message.content, "\n\n"] | join(" ")' \
-    | pandoc -f markdown -t html | lynx -stdin -dump | fmt > "json_all/$slug.txt"
+    | pandoc -f markdown -t html | lynx -stdin -dump | fmt >> "json_all/$slug.txt"
+
+    # optional: add the question to the end of the file
+    echo "" >> "json_all/$slug.txt"
+    echo "---------------------" >> "json_all/$slug.txt"
+    echo "" >> "json_all/$slug.txt"
+    echo "$question" >> "json_all/$slug.txt"
 }
 
 finalize_json_files "$PRSLUG"
