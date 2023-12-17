@@ -10,7 +10,30 @@ See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - wor
 
 ## Prerequisites / Installation
 
-The shell script controls `"newman"`, and newman loads artifacts from Postman.
+
+##### Prerequsites
+
+These command line tools must be installed:
+
+- `node`, the JavaScript runtime
+- `newman`, the Postman CLI, a `node` package
+- `curl`, the HTTP client
+- `jq`, the JSON parser
+- `pandoc`, the document converter (for markdown to html)
+- `lynx`, the commandline browser and HTML parser (for html to txt)
+- `fmt`, the text formatter (for pretty text output)
+
+This large binary GUI App should be installed, and you must know how to use it:
+
+[Postman](https://getpostman.com), the GUI
+
+All are free software.
+
+#### What it does
+
+Ask a query and get a pretty textfile with the responses from various AI systems/models, see [README-verbose.md](README-verbose.md) for more details.
+
+The shell script [`explore_perlplexity_api.sh`](./explore_perplexity_api.sh) controls the NodeJS app `"newman"`, and newman loads artifacts exported from Postman.
 
 On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16)
 

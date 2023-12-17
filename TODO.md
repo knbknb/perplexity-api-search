@@ -28,6 +28,7 @@ This will not be passed to the AI systems yet. It is just a potential future imp
 
 These command line tools must be installed:
 
-`fzf`, the fuzzy finder
-`yq`, the YAML parser
-`jq`, the JSON parser
+- `fzf`, the fuzzy finder
+- `yq`, the YAML parser
+- `jq`, the JSON parser
+- `curl`, the HTTP client
