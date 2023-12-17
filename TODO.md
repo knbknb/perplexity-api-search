@@ -5,7 +5,7 @@
 
 ##### (Under construction)
 
-The `find-assistant` script is a simple script that will propose different custom instructions to pass to the AI system's "assistant" role.
+The [`find-assistant`](find-assistant) script is a simple script that will propose different custom instructions to pass to the AI system's "assistant" role.
 
 Usage:
 
@@ -19,4 +19,15 @@ The shell will turn into this:
 
 ![terminal window screenshot](resources/find-assistant-screenshot-terminalwindow-ann.png)
 
+(1) Is your prompt after hitting `<enter>`  
+(2) Shows a full expansion of the preview text shown in (1)
+
 This will not be passed to the AI systems yet. It is just a potential future improvement to the script, to help you find  more focused results.
+
+##### Prerequsites
+
+These command line tools must be installed:
+
+`fzf`, the fuzzy finder
+`yq`, the YAML parser
+`jq`, the JSON parser

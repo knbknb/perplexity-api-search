@@ -1,14 +1,16 @@
 <!-- markdownlint-disable MD001 -->
 # Querying the Perplexity API with Newman and Postman
 
-In a shell script, send you human-language query to various AI systems/models, in a single loop.
+## Developer Notes
+
+In a Terminal, using a shell script, send your human-language query to various AI systems/models, in a single loop.
 Collect the responses an put them in a pretty textfile.
 
-See Shell Script `explore_perlplexity_api` - work in progress
+See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - work in progress
 
 ## Prerequisites / Installation
 
-The shell script controls `"newman"`, and newman loads artifacts from Postman
+The shell script controls `"newman"`, and newman loads artifacts from Postman.
 
 On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16)
 
