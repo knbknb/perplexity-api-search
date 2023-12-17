@@ -67,7 +67,7 @@ See `json_all/sled-racing.txt` (coming soon)
    Skeleton sleigh racing, also known as skeleton bobsleigh, has been
    an Olympic sport for men since the 1924 Winter Olympics in Chamonix,
    France, and for women since the 2002 Winter Olympics in Salt Lake City,
-   Utah, USA.
+   Utah, USA.  ## 1924-WRONG, 2002-CORRECT
      __________________________________________________________________
 
    ## mistral-7b-instruct
@@ -80,7 +80,8 @@ See `json_all/sled-racing.txt` (coming soon)
    ## pplx-70b-chat
      __________________________________________________________________
 
-   Skeleton sleigh racing became an Olympic sport in 1924.
+   Skeleton sleigh racing became an Olympic sport in 1924. 
+   ## WRONG
      __________________________________________________________________
 
    ## pplx-70b-online
@@ -92,7 +93,7 @@ See `json_all/sled-racing.txt` (coming soon)
    event until its permanent addition to the Winter Games in 2002.
    Skeleton is a winter sliding sport where competitors ride a small
    sled, known as a skeleton bobsled, down a frozen track while lying
-   face down and head-first.
+   face down and head-first. ## CORRECT
      __________________________________________________________________
 
    ## pplx-7b-chat
@@ -106,6 +107,8 @@ See `json_all/sled-racing.txt` (coming soon)
    been a part of every Winter Olympics. So, the answer to your question
    is that skeleton sleigh racing became an Olympic sport in 1928 and
    has been included in every Winter Olympics since then.
+
+   ## TOTALLY WRONG
      __________________________________________________________________
 
    ## pplx-7b-online
@@ -121,4 +124,7 @@ See `json_all/sled-racing.txt` (coming soon)
    International Olympic Committee (IOC) added the discipline to the
    2002 Salt Lake City Olympics, with both men’s and women’s events,
    and it has been held in each Winter Olympic competition since then.
+
+   ## CORRECT (probably)
+     __________________________________________________________________
 ```
