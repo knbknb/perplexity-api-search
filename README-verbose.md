@@ -108,7 +108,7 @@ See `json_all/sled-racing.txt` (coming soon)
    is that skeleton sleigh racing became an Olympic sport in 1928 and
    has been included in every Winter Olympics since then.
 
-   ## TOTALLY WRONG
+   ## PART 1 - CORRECT, PART 2 - TOTALLY WRONG
      __________________________________________________________________
 
    ## pplx-7b-online
@@ -127,4 +127,14 @@ See `json_all/sled-racing.txt` (coming soon)
 
    ## CORRECT (probably)
      __________________________________________________________________
+
+     
+     __________________________________________________________________
+
+   ## mixtral-8x7b-instruct
+     __________________________________________________________________
+
+     Skeleton sled racing, also known simply as skeleton, has been a part of the Olympic Winter Games since 2002. It was first included as an official medal event in the Winter Olympics during the Salt Lake City Games, which were held in February of 2002. Since then, skeleton has been contested in every Winter Olympics. In skeleton, athletes race down an icy track on a small sled while lying face down and head-first. The sport requires a combination of speed, strength, and precision, and is known for its high speeds and thrilling action. I hope this helps! If you have any other questions, just let me know.
+
+     ### CORRECT (probably)
 ```

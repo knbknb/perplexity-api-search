@@ -8,7 +8,9 @@ See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - wor
 
 #### Example call:
 
-##### (A question about a sport: Skeleton Bobsled Racing.)
+##### A question about a sport: Skeleton Bobsled Racing:  
+
+> "In which years became skeleton sled racing olympic?"
 
 ```bash
 # one-off: YOUR API KEY HERE
@@ -17,6 +19,8 @@ export PERPLEXITY_API_KEY=pplx-....
 ./explore_perplexity_api.sh --prompt "In which years became skeleton sled racing olympic?" \
   --slug "sled-racing"
 ```
+
+This is a one-shot question, not a conversation.
 
 ##### Example output:
 
