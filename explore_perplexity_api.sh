@@ -10,6 +10,10 @@
 # . ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"
 PRSLUG="prompt-slug"
 PROMPT="your question or task"
+PERSONA="Answer as if users have high intelligence. Users can understand any concept with minimal explanation. Users are extremely intuitive. Users do not need things spelled out to understand them, but users crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities."
+PERSONA_DEFAULT=PERSONA
+VERBOSE=""
+
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --prompt)
@@ -20,8 +24,16 @@ while [[ "$#" -gt 0 ]]; do
             PRSLUG=$2
             shift
             ;;
+        --persona)
+            PERSONA=$2
+            shift
+            ;;
+        --verbose)
+            VERBOSE=$2
+            shift
+            ;;
         *)
-            echo '. ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"'
+            echo '. ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me" --verbose yes'
             echo "Invalid option: $1" >&2
             exit 1
             ;;
@@ -45,6 +57,18 @@ if [ -z "$PRSLUG" ]; then
 else
     echo "Using PRSLUG (prompt-fragment) --slug '$PRSLUG'"
 fi
+
+# Check if PERSONA is empty
+if [ -z "$PERSONA" ]; then
+    echo "Optional argument: --persona PERSONA cannot be empty string" >&2
+    echo "Leave it out to use the default --persona $PERSONA_DEFAULT" >&2
+    echo "To get a list of available personas, run this command:" >&2
+    echo "find-persona <enter>" >&2
+    echo "(curl, jq, yq, fzf, fold and tput need to be installed)" >&2
+    exit 1
+else
+    echo "Using PERSONA --persona '$PERSONA'"
+fi
 read -p "Press enter to continue"
 mkdir -p queries json_extracted newman json_all
 # works
@@ -67,24 +91,18 @@ models=$(< $environment_file jq -r '.environment.values[] | select(.key=="model"
 : "${PERPLEXITY_API_KEY:?Need to set/export env var PERPLEXITY_API_KEY non-empty}"
 
 custom_instruction=$(jq <<EOF
-{
-    "model": "MODEL",
+{"model": "MODEL",
     "messages": [
-        {
-            "role": "system",
-            "content": "Answer as if users have superhuman intelligence, 200 IQ. Users can understand any concept with minimal explanation. Users are extremely intuitive. Users do not need things spelled out to understand them, but users do crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities.."
-        },
-        {
-            "role": "user",
-            "content": "$PROMPT"
-        }
+        {"role": "system", "content": "$PERSONA"},
+        {"role": "user",   "content": "$PROMPT"}
     ]
 }
 EOF
 )
 
 
-# uses jq -rs to wrap everything into an enclosing array
+# uses jq -rs to wrap JSON fragments (with commas missing) 
+# into an enclosing array, properly separated with commas
 enclose_filecontent_in_array() {
     local json_file="$1"
 
@@ -131,12 +149,12 @@ for model in $models; do
     #echo "Writing $query_file"    
     <"$collection_file" jq --arg RAW "$prompt_json" --arg NAME "$model" '.item[0].request.body.raw |= $RAW | .name |= $NAME' > "$query_file"
       
-   #
-   #report="newman/$PRSLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
-   report="newman/$PRSLUG--$model.html"
+    #
+    #report="newman/$PRSLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
+    report="newman/$PRSLUG--$model.html"
 
-   echo "$model: Running collection $query_file"
-   newman run "$query_file" -e "$modif_environment_file" \
+    echo "$model: Running collection $query_file"
+    newman run "$query_file" -e "$modif_environment_file" \
        -r htmlextra \
        --reporter-htmlextra-export "$report" \
        --reporter-htmlextra-skipHeaders "Authorization" \
@@ -144,23 +162,27 @@ for model in $models; do
        --reporter-htmlextra-title "$model: $prompt"
 
 
-   file_name=$(basename "$query_file")
-   base_name="${file_name%.*}"
-   json_outfile="$json_outdir/$base_name.json"
-   if [ ! -f "$report" ]; then
-       echo "Skipping $report"
-       continue
-   else 
-     xidel --input "$report" --html -s -e  "//code/text()" \
-       | tail -n +3 \
-       | head -n -1 > "$json_outfile" 
-   fi
+    file_name=$(basename "$query_file")
+    base_name="${file_name%.*}"
+    json_outfile="$json_outdir/$base_name.json"
+    if [ ! -f "$report" ]; then
+        echo "Skipping $report"
+        continue
+    else 
+     # not robust: xmllint --html --xpath "//code/text()" "$report"
+     # robust way to extract the JSON from the HTML reports:
+      xidel --input "$report" --html -s -e  "//code/text()" \
+        | tail -n +3 \
+        | head -n -1 > "$json_outfile" 
+    fi
 
 
-   ## turn 2 JSON fragments into 1 proper JSON array
-   enclose_filecontent_in_array "$json_outfile"
-   ## inform user
-   write_json_output_to_stdout "$json_outfile"
+    ## turn 2 JSON fragments into 1 proper JSON array
+    enclose_filecontent_in_array "$json_outfile"
+    ## inform user while script es running
+    if [ -n "${verbose+x}" ]; then
+        write_json_output_to_stdout "$json_outfile"
+    fi
 
 done
 
