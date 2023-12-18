@@ -4,11 +4,11 @@
 ##### Send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
 ##### Collect the responses and put them in a pretty textfile.
 
-See Shell Script `explore_perlplexity_api.sh` - work in progress
+See Shell Script [`explore_perplexity_api.sh`](./explore_perplexity_api.sh) - work in progress
 
-You must also specify a command line argument  `--slug`. A slug is a prompt fragment for easy reference to the query and the output files. The AI responses will be saved into a single textfile in the `json_all` directory.
+You must also specify a command line argument  `--slug`. A slug is a prompt fragment for easy reference to the query and the output files.  If your slug is `sled-racing`, then see `json_all/sled-racing.txt`. Use single words, no spaces.
 
-If your slug is `sled-racing`, then see `json_all/sled-racing.txt`.
+The AI responses will be saved into a single textfile in the `json_all` directory.
 
 **Important**: set this environment variable first, or the script will not run:
 
