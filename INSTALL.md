@@ -86,12 +86,13 @@ The Postman API Key can be found by clicking on the user icon on the top right a
 ##### Some useful variables, keys and codesnippets
 
 ```bash
+# needed for one-off export of collection and environment
 export postman_apikey=PMAK-.............
 export collid=137056-d7f808d2-27dd-4525-8869-a42de46af4cb
 export envid=137056-ae5d3cc7-d7f7-450b-8737-c95a7b9e8f85
 export pplx_api_key=pplx-........................
 
-# extract the api key from the environment file, 
+# extract the placeholder string for the api key  from the environment file, 
 environment_file=perplexity-API-export-environment.json
 pplx_api_key=$(<  $environment_file jq -r '.environment.values[] | select(.key=="PERPLEXITY_API_KEY") | .value')
 echo "PERPLEXITY_API_KEY=$pplx_api_key" >> .env

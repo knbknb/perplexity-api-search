@@ -4,7 +4,7 @@
 ##### In a Linux terminal, send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
 ##### Collect the responses and put them in a pretty textfile.
 
-See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - work in progress
+See Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - work in progress
 
 #### Example call:
 
