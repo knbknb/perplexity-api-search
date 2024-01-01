@@ -9,8 +9,6 @@
 
 # - use a for loop to iterate over all files
 
-#GITHUB_TOKEN=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   # add your github token here
-
 # if ENV variable is not set, exit with error
 : "${GITHUB_TOKEN:?Need to set/export env var GITHUB_TOKEN non-empty. Check .git/config for github token.}"
 
