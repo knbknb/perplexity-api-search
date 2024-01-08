@@ -23,19 +23,17 @@ These command line tools must be installed:
 - `lynx`, the commandline browser and HTML parser (for html to txt)
 - `fmt`, the text formatter (for pretty text output)
 
-This large binary GUI App should be installed, and you must know how to use it:
+All are free software.  
+The large binary GUI App "Postman" should be installed, and you must know how to use it.  
+Get it here: [Postman](https://getpostman.com), the GUI App. It is commercial, but it has a free tier/plan.
 
-[Postman](https://getpostman.com), the GUI
-
-All are free software.
-
-#### What it does
+#### What script `explore_perlplexity_api.sh` does
 
 Ask a query and get a pretty textfile with the responses from various AI systems/models, see [README-verbose.md](README-verbose.md) for more details.
 
 The shell script [`explore_perlplexity_api.sh`](./explore_perplexity_api.sh) controls the NodeJS app `"newman"`, and newman loads artifacts exported from Postman.
 
-On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16)
+On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16). Attention: `npm` 10 does not work with Node 16.
 
 ```bash
 nvm current
