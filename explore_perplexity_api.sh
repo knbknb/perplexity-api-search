@@ -8,12 +8,10 @@
 
 # example usage:
 # . ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"
-PRSLUG="prompt-slug"
+SLUG="prompt-slug"
 PROMPT="your question or task"
 PERSONA="Answer as if users have high intelligence. Users can understand any concept with minimal explanation. Users are extremely intuitive. Users do not need things spelled out to understand them, but users crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities."
-PERSONA_DEFAULT=PERSONA
 VERBOSE=""
-
 while [[ "$#" -gt 0 ]]; do
     case $1 in
         --prompt)
@@ -21,7 +19,7 @@ while [[ "$#" -gt 0 ]]; do
             shift
             ;;
         --slug)
-            PRSLUG=$2
+            SLUG=$2
             shift
             ;;
         --persona)
@@ -41,7 +39,6 @@ while [[ "$#" -gt 0 ]]; do
     shift
 done
 
-#shift $((OPTIND-1))
 # Check if PROMPT is empty
 if [ -z "$PROMPT" ]; then
     echo "Missing required argument: --prompt PROMPT" >&2
@@ -50,25 +47,15 @@ else
     echo "Using prompt --prompt '$PROMPT'"
 fi
 
-# Check if PRSLUG is empty
-if [ -z "$PRSLUG" ]; then
+# Check if SLUG is empty
+if [ -z "$SLUG" ]; then
     echo "Missing required argument: -prompt '...'" >&2
     exit 1
 else
-    echo "Using PRSLUG (prompt-fragment) --slug '$PRSLUG'"
+    echo "Using SLUG (prompt-fragment) --slug '$SLUG'"
 fi
 
-# Check if PERSONA is empty
-if [ -z "$PERSONA" ]; then
-    echo "Optional argument: --persona PERSONA cannot be empty string" >&2
-    echo "Leave it out to use the default --persona $PERSONA_DEFAULT" >&2
-    echo "To get a list of available personas, run this command:" >&2
-    echo "find-persona <enter>" >&2
-    echo "(curl, jq, yq, fzf, fold and tput need to be installed)" >&2
-    exit 1
-else
-    echo "Using PERSONA --persona '$PERSONA'"
-fi
+
 read -p "Press enter to continue"
 mkdir -p queries json_extracted newman json_all
 # works
@@ -82,10 +69,11 @@ html_outdir=newman
 json_outdir=json_extracted
 query_dir="queries"
 
-# write API key to environment file
+# write API key to newly-constructed  environment file
 <"$environment_file" jq --arg PERPLEXITY_API_KEY "$PERPLEXITY_API_KEY" '.environment.values[0].value |= $PERPLEXITY_API_KEY' > "$modif_environment_file"
 
 models=$(< $environment_file jq -r '.environment.values[] | select(.key=="model") | .value ')
+
 
 # if ENV variable is not set, exit with error
 : "${PERPLEXITY_API_KEY:?Need to set/export env var PERPLEXITY_API_KEY non-empty}"
@@ -145,13 +133,13 @@ for model in $models; do
     # use jq to replace the PROMPT in the custom_instruction
     #echo "$prompt_json" 
    
-    query_file="$query_dir/$PRSLUG--$model.json"
+    query_file="$query_dir/$SLUG--$model.json"
     #echo "Writing $query_file"    
     <"$collection_file" jq --arg RAW "$prompt_json" --arg NAME "$model" '.item[0].request.body.raw |= $RAW | .name |= $NAME' > "$query_file"
       
     #
-    #report="newman/$PRSLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
-    report="newman/$PRSLUG--$model.html"
+    #report="newman/$SLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
+    report="newman/$SLUG--$model.html"
 
     echo "$model: Running collection $query_file"
     newman run "$query_file" -e "$modif_environment_file" \
@@ -215,6 +203,6 @@ finalize_json_files() {
     echo "$question" >> "json_all/$slug.txt"
 }
 
-finalize_json_files "$PRSLUG"
-##display_all_results "$PRSLUG"
+finalize_json_files "$SLUG"
+##display_all_results "$SLUG"
 
