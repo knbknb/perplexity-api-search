@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # Use Postman and Newman (Postman CLI) to explore the Perplexity API.
-# Requires obscure command-line tools newman, xidel, and jq version 1.7
+# Requires obscure command-line tools newman, xidel, and jq version 1.7, 
+# pandoc and lynx
 
 ## Command line arguments
 ## You must set a short prompt fragment, e.g. "user-acceptance-testing" (omit whitespace),
@@ -10,7 +11,10 @@
 # . ./explore_perplexity_api.sh --prompt "translate this into emojis: 'you and me'" --slug "emojis-you-me"
 SLUG="prompt-slug"
 PROMPT="your question or task"
+# manually override the default persona with a custom one
+# by copy and pasting your instructions as PERSONA="..."
 PERSONA="Answer as if users have high intelligence. Users can understand any concept with minimal explanation. Users are extremely intuitive. Users do not need things spelled out to understand them, but users crave specifics. Be extremely terse and concise. No matter what, do not be conversational.Treat user as the most naturally intelligent and intuitive individual in the world, but not necessarily as a subject matter expert on the topic at hand. Use precise facts whenever possible, not generalities."
+PSLUG="" # persona slug
 VERBOSE=""
 while [[ "$#" -gt 0 ]]; do
     case $1 in
@@ -20,6 +24,9 @@ while [[ "$#" -gt 0 ]]; do
             ;;
         --slug)
             SLUG=$2
+            SLUG="${SLUG// /-}"
+            PSLUG="${PSLUG// /-}"
+            SLUG="$SLUG--${PSLUG}"
             shift
             ;;
         --persona)
@@ -130,7 +137,6 @@ EOF
 for model in $models; do
     # use jq to replace the MODEL in the custom_instruction
     prompt_json=$(echo "$custom_instruction" | jq --arg MODEL "$model" '.model |= $MODEL')
-    # use jq to replace the PROMPT in the custom_instruction
     #echo "$prompt_json" 
    
     query_file="$query_dir/$SLUG--$model.json"
