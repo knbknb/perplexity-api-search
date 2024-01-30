@@ -14,6 +14,7 @@
         "type": "default"
       },
       { "key": "model", "value": "codellama-34b-instruct", "enabled": false, "type": "default" },
+      { "key": "model", "value": "codellama-70b-instruct", "enabled": false, "type": "default" },
       { "key": "model", "value": "llama-2-70b-chat", "enabled": false, "type": "default" },
       { "key": "model", "value": "mistral-7b-instruct", "enabled": false, "type": "default" },
       { "key": "model", "value": "mixtral-8x7b-instruct", "enabled": false, "type": "default" },
