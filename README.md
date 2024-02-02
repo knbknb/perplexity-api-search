@@ -32,4 +32,6 @@ See [INSTALL.md](INSTALL.md) for more details.
 
 ## Future Work
 
-See [TODO.md](TODO.md) for more details.
+- Make setting the "custom instruction" more flexible, and more interactive.
+- Finish the Python rewrite of this script.
+- See [TODO.md](TODO.md) for more details.

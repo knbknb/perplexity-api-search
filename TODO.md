@@ -3,9 +3,8 @@
 
 ### ~~Upload as Github Gist~~
 
-~~Write a helper shellscript that uplaods each .txt output file to github, as a Gist.~~
-
-- Done, see [upload_as_github_gist.sh](upload_as_github_gist.sh)
+~~Write a helper shellscript that uplaods each .txt output file to github, as a Gist, for sharing.~~
+    - Done, see [upload_as_github_gist.sh](upload_as_github_gist.sh)
 
 ### The "find-assistant" script
 
