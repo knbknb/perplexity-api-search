@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # knb 20240101
 # Shellscript to upload a bunch of textfiles to gist.github.com
-# - files are txt files in subdirectory json_all
+# - files are txt files in subdirectory final_output
 # - use curl to upload the file
 # - use an environment variable for the github token, must be set on command line first
 # - as gist filename use the filename of the .txt file
@@ -21,7 +21,7 @@ if [ ${#gist_names} -eq 0 ]; then
     exit 1
 fi
 # if $filename is not in array of $gistnames, then upload file.
-for file in json_all/*.txt; do
+for file in final_output/*.txt; do
     filename=$(basename "$file")
     # get file modification date of $file, make it part of "Description:"
     # - get description from line containing "content:"

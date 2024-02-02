@@ -111,7 +111,7 @@ def main(api_key):
     PSLUG   = args.persona_slug
     VERBOSE = args.verbose
 
-    directories = ['queries', 'json_extracted', 'newman', 'json_all']
+    directories = ['queries', 'json_extracted', 'newman', 'final_output']
     tools = ['curl', 'jq', 'yq', 'fzf', 'fold', 'tput']
 
     # Check for required tools

@@ -6,9 +6,9 @@
 
 See Shell Script [`explore_perplexity_api.sh`](./explore_perplexity_api.sh) - work in progress
 
-You must also specify a command line argument  `--slug`. A slug is a prompt fragment for easy reference to the query and the output files.  If your slug is `sled-racing`, then see `json_all/sled-racing.txt`. Use single words, no spaces.
+You must also specify a command line argument  `--slug`. A slug is a prompt fragment for easy reference to the query and the output files.  If your slug is `sled-racing`, then see `final_output/sled-racing.txt`. Use simple words, no spaces.
 
-The AI responses will be saved into a single textfile in the `json_all` directory.
+The AI responses will be saved into a single textfile in the `final_output` directory.
 
 **Important**: set this environment variable first, or the script will not run:
 
@@ -35,13 +35,13 @@ Using prompt -p 'In which years became skeleton sleigh racing olympic?'
 
 Using SLUG (prompt-fragment) --slug 'sleigh-racing'
 Press enter to continue
-codellama-34b-instruct: Running collection queries/sleigh-racing--codellama-34b-instruct.json
-llama-2-70b-chat:       Running collection queries/sleigh-racing--llama-2-70b-chat.json
-mistral-7b-instruct:    Running collection queries/sleigh-racing--mistral-7b-instruct.json
-pplx-7b-chat:           Running collection queries/sleigh-racing--pplx-7b-chat.json
-pplx-70b-chat:          Running collection queries/sleigh-racing--pplx-70b-chat.json
-pplx-7b-online:         Running collection queries/sleigh-racing--pplx-7b-online.json
-pplx-70b-online:        Running collection queries/sleigh-racing--pplx-70b-online.json
+codellama-34b-instruct: Saving into  queries/sleigh-racing--codellama-34b-instruct.json
+llama-2-70b-chat:       Saving into  queries/sleigh-racing--llama-2-70b-chat.json
+mistral-7b-instruct:    Saving into  queries/sleigh-racing--mistral-7b-instruct.json
+pplx-7b-chat:           Saving into  queries/sleigh-racing--pplx-7b-chat.json
+pplx-70b-chat:          Saving into  queries/sleigh-racing--pplx-70b-chat.json
+pplx-7b-online:         Saving into  queries/sleigh-racing--pplx-7b-online.json
+pplx-70b-online:        Saving into  queries/sleigh-racing--pplx-70b-online.json
 ```
 
 ##### API response:
@@ -50,7 +50,7 @@ pplx-70b-online:        Running collection queries/sleigh-racing--pplx-70b-onlin
 
 Various intermediate htmlfiles and jsonfiles are created, but the final output is a pretty textfile.
 
-See `json_all/sled-racing.txt` (coming soon)
+See `final_output/sled-racing.txt` (coming soon)
 
 ```text
      __________________________________________________________________

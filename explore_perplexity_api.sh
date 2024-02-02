@@ -64,7 +64,7 @@ fi
 
 
 read -p "Press enter to continue"
-mkdir -p queries json_extracted newman json_all
+mkdir -p queries json_extracted newman final_output
 # works
 # manual prerequisite one-off task: extract Postman environment info into a .json file
 collection_file="Perplexity API export.postman_collection.json"
@@ -126,10 +126,10 @@ display_all_results() {
         local slug="$1"
         cat <<EOF
 # now run this to see the results, extracted from the json files
-< json_all/*$slug*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
- | pandoc -f markdown -t html | lynx -stdin -dump > json_all/$slug.txt
+< final_output/*$slug*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
+ | pandoc -f markdown -t html | lynx -stdin -dump > final_output/$slug.txt
 or
-fmt json_all/*$slug*.json  
+fmt final_output/*$slug*.json  
     
 EOF
 }
@@ -139,7 +139,7 @@ for model in $models; do
     prompt_json=$(echo "$custom_instruction" | jq --arg MODEL "$model" '.model |= $MODEL')
     #echo "$prompt_json" 
    
-    query_file="$query_dir/$SLUG--$model.json"
+    query_file="${query_dir}/${SLUG}${model}.json"
     #echo "Writing $query_file"    
     <"$collection_file" jq --arg RAW "$prompt_json" --arg NAME "$model" '.item[0].request.body.raw |= $RAW | .name |= $NAME' > "$query_file"
       
@@ -147,14 +147,14 @@ for model in $models; do
     #report="newman/$SLUG--$model---$(date +%Y-%m-%d-%H-%M-%S).html"
     report="newman/$SLUG--$model.html"
 
-    echo "$model: Running collection $query_file"
-    newman run "$query_file" -e "$modif_environment_file" \
+    echo "$model: Saving into $query_file"
+    echo newman run "$query_file" -e "$modif_environment_file" \
        -r htmlextra \
        --reporter-htmlextra-export "$report" \
        --reporter-htmlextra-skipHeaders "Authorization" \
        --reporter-htmlextra-browserTitle "$model: $prompt" \
        --reporter-htmlextra-title "$model: $prompt"
-
+    continue
 
     file_name=$(basename "$query_file")
     base_name="${file_name%.*}"
@@ -183,7 +183,7 @@ done
 # json to html to pretty printed text
 finalize_json_files() {
     local slug="$1"
-    local outfile="json_all/$slug.json"
+    local outfile="final_output/$slug.json"
 
     rm "$outfile" 2>/dev/null
     ls -1 json_extracted/*"$slug"*.json | xargs -i bash -c "jq -rs < \"{}\"  >> $outfile"
@@ -196,17 +196,17 @@ finalize_json_files() {
     question=$(< "$outfile" grep '"role": "user"' -A 1  | tail -1)
     # Trim leading whitespace
     question="${question#"${question%%[![:space:]]*}"}"
-    echo "# $question" > "json_all/$slug.txt"
+    echo "# $question" > "final_output/$slug.txt"
     
     # ! ---> write answers to file, nicely human readable
     < "$outfile" jq -r '.[]| ["<hr>## ", .[0].model, "<hr>\n\n", .[].choices[0].message.content, "\n\n"] | join(" ")' \
-    | pandoc -f markdown -t html | lynx -stdin -dump | fmt >> "json_all/$slug.txt"
+    | pandoc -f markdown -t html | lynx -stdin -dump | fmt >> "final_output/$slug.txt"
 
     # optional: add the question to the end of the file
-    echo "" >> "json_all/$slug.txt"
-    echo "---------------------" >> "json_all/$slug.txt"
-    echo "" >> "json_all/$slug.txt"
-    echo "$question" >> "json_all/$slug.txt"
+    echo "" >> "final_output/$slug.txt"
+    echo "---------------------" >> "final_output/$slug.txt"
+    echo "" >> "final_output/$slug.txt"
+    echo "$question" >> "final_output/$slug.txt"
 }
 
 finalize_json_files "$SLUG"
