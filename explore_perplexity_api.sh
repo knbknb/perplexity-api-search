@@ -51,11 +51,11 @@ write_json_output_to_stdout() {
 display_all_results() {
         local slug="$1"
         cat <<EOF
-# now run this to see the results, extracted from the json files
-< final_output/*$slug*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
- | pandoc -f markdown -t html | lynx -stdin -dump > final_output/$slug.txt
-or
-fmt final_output/*$slug*.json  
+    # now run this to see the results, extracted from the json files
+    < final_output/*$slug*.json jq -r ' .[]| ["###### ", .[0].model, .[].choices[0].message.content, "\n\n"] | join("        ")' \ 
+    | pandoc -f markdown -t html | lynx -stdin -dump > final_output/$slug.txt
+    or
+    fmt final_output/*$slug*.json  
     
 EOF
 }
