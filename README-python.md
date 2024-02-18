@@ -31,7 +31,7 @@ Extracted answer from model pplx-70b-online into 'final_output/celentano-song.tm
 Extracted answer from model pplx-7b-chat into 'final_output/celentano-song.tmp.txt'
 ```
 
-### In the file `[final_output/celentano-song.txt](final_output/celentano-song.txt)`
+### In the file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)`
 
 ```markdown
     # celentano-song.txt
@@ -48,8 +48,8 @@ sound to an Italian speaker.
 
 
 ### codellama-70b-instruct:
-😊 Ah, I'd be happy to help! The name of the song is actually "Pregheri - Io per
-te prego". The lyrics in this song are indeed fake English, and they're actually
+😊 Ah, I'd be happy to help! The name of the song is actually `"Pregheri - Io per
+te prego"`. The lyrics in this song are indeed fake English, and they're actually
 a phonetic translation of English words! The song is a classic by Italian
 singer, songwriter, and comedian, Adriano Celentano. Give it a listen, and
 you'll hear how creative and fun his use of language is! 🎶🎶🎶
@@ -78,7 +78,7 @@ The song you're referring to is called `"Prisencolinensinainciusol"` by Italian
 singer Adriano Celentano. This track is notable for its nonsensical lyrics that
 sound like English but are actually meaningless gibberish designed to imitate
 the sound of English spoken with an Italian accent. The song was released in
-1972 on his album `"Nostalrock."` It's a creative and humorous take on the
+1972 on his album _Nostalrock._ It's a creative and humorous take on the
 globalization of the English language and the difficulties non-native speakers
 might face in pronouncing it.
 
