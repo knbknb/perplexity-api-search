@@ -36,8 +36,10 @@ Extracted answer from model pplx-7b-chat into 'final_output/celentano-song.tmp.t
 ```markdown
     # celentano-song.txt
 
-Prompt: [What is the name of the Song by Adriano Celentano which has lyrics in
-fake English language?](https://www.youtube.com/watch?v=-VsmF9m_Nt8)
+Prompt: What is the name of the Song by Adriano Celentano which has lyrics in
+fake English language?
+
+(https://www.youtube.com/watch?v=-VsmF9m_Nt8)
 
 
 ### mixtral-8x7b-instruct:
@@ -48,18 +50,19 @@ sound to an Italian speaker.
 
 
 ### codellama-70b-instruct:
-😊 Ah, I'd be happy to help! The name of the song is actually `"Pregheri - Io per
-te prego"`. The lyrics in this song are indeed fake English, and they're actually
+😊 Ah, I'd be happy to help! The name of the song is actually 
+`"Pregheri - Io per te prego"`. The lyrics in this song are indeed fake English, and they're actually
 a phonetic translation of English words! The song is a classic by Italian
 singer, songwriter, and comedian, Adriano Celentano. Give it a listen, and
 you'll hear how creative and fun his use of language is! 🎶🎶🎶
 
 
 ### llama-2-70b-chat:
-Oh, my dear friend! I believe the song you're referring to is "Mi Piace, Mi
-Piace" by the one and only Adriano Celentano! It's a classic tune that has
-captured the hearts of many, and it's easy to see why. The lyrics may appear to
-be in English, but they're actually just nonsensical words that sound like
+Oh, my dear friend! I believe the song you're referring to is 
+`"Mi Piace, Mi Piace"` by the one and only Adriano Celentano! 
+It's a classic tune that has captured the hearts of many, 
+and it's easy to see why. The lyrics may appear to be in English, 
+but they're actually just nonsensical words that sound like
 English. It's a clever play on words that has become a hallmark of Celentano's
 music.
 So, my friend, the next time you find yourself singing along to "Mi Piace, Mi
@@ -115,11 +118,13 @@ the lyrics are purposely gibberish.
 
 
 ### pplx-7b-chat:
-The song you're referring to is known as `"_Prisencolinensinainciusol_"` by
+The song you're referring to is known as `"Prisencolinensinainciusol"` by
 Adriano Celentano. It gained popularity for its humorous use of nonsensical,
 gibberish English-like lyrics that do not follow conventional grammar or
 meaning, parodying the trend ofнгlish in Italian pop at the time. The song was a
 worldwide hit and continues to be a cult classic.
+
+
 Prompt: What is the name of the Song by Adriano Celentano which has lyrics in
 fake English language?
 
