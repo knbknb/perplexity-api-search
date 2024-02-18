@@ -1,40 +1,11 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Querying the Perplexity API
 
-##### In a Linux terminal, send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
+A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.ai/blog/introducing-pplx-online-llms).  This is a work in progress.  The goal is to make it easier to query the Perplexity.ai API, and to compare the results of different models.
 
-##### See Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - work in progress.
+##### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM APIs  in a single loop.  
 
-##### The script collects the API responses and puts them in a pretty textfile, for you to read and compare model outputs.
+##### See Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py) - rewrite of shell script . See [README-python.md](README-python.md) for more details.  - has fewer dependencies than the shell script (which was a first implementation).
 
-You need to be a "perplexity pro" customer to use this script.  It requires an API key. Running the script is not free of charge. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
+##### See Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - first prototype . See [README-shell.md](README-shell.md) for more details.
 
-#### Example call:
-
-##### A question about a sport: Skeleton Bobsled Racing:  
-
-> "In which years became skeleton sled racing olympic?"
-
-```bash
-# one-off: YOUR API KEY HERE
-export PERPLEXITY_API_KEY=pplx-....
-# ask a question, with a slug for easy reference
-./explore_perplexity_api.sh --prompt "In which years became skeleton sled racing olympic?" \
-  --slug "sled-racing"
-```
-
-This is a one-shot question, not a conversation.
-
-##### Example output:
-
-See [README-verbose.md](README-verbose.md) for more details.
-
-## Installation
-
-See [INSTALL.md](INSTALL.md) for more details.
-
-## Future Work
-
-- Make setting the "custom instruction" more flexible, and more interactive.
-- Finish the Python rewrite of this script.
-- See [TODO.md](TODO.md) for more details.
