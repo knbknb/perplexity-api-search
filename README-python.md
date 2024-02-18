@@ -7,4 +7,3 @@
 
 ##### The python script collects the API responses and puts them in a pretty textfile, for you to read and compare model outputs.
 
-You need to be a "perplexity pro" customer to use this script.  It requires an API key. Running the script is not free of charge. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.

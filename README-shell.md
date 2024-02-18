@@ -29,12 +29,3 @@ This is a one-shot question, not a conversation.
 
 See [README-verbose.md](README-verbose.md) for more details.
 
-## Installation
-
-See [INSTALL.md](INSTALL.md) for more details.
-
-## Future Work
-
-- Make setting the "custom instruction" more flexible, and more interactive.
-- Finish the Python rewrite of this script.
-- See [TODO.md](TODO.md) for more details.
