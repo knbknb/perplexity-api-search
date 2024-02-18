@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Querying the Perplexity API
 
-###### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM API endpoints  in a single command.  
+##### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM API endpoints  in a single command.  
 
 A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.ai/blog/introducing-pplx-online-llms).  This is a work in progress.  
 The goal is to make it easy to query the Perplexity.ai API endpoints from the command line, and to compare the results of different models.
