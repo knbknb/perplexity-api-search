@@ -10,10 +10,16 @@ See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - wor
 
 ## Prerequisites / Installation
 
+##### Prerequsites - python script
 
-##### Prerequsites
+For the python script, these command line tools must be installed:
 
-These command line tools must be installed:
+- `node`, the JavaScript runtime
+- `newman`, the Postman CLI, a `node` package
+
+##### Prerequsites - shell script
+
+For the shell script, these command line tools must be installed:
 
 - `node`, the JavaScript runtime
 - `newman`, the Postman CLI, a `node` package
