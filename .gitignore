@@ -3,4 +3,6 @@ newman/*
 json_extracted/*
 perplexity-API-export-environment-with-cleartext-key.json
 final_output/*
+!final_output/
+!final_output/celentano-song.txt
 json_all/*
