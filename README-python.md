@@ -31,13 +31,13 @@ Extracted answer from model pplx-70b-online into 'final_output/celentano-song.tm
 Extracted answer from model pplx-7b-chat into 'final_output/celentano-song.tmp.txt'
 ```
 
-### In the file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)`
+### In the file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)
 
 ```markdown
     # celentano-song.txt
 
-Prompt: What is the name of the Song by Adriano Celentano which has lyrics in
-fake English language?
+Prompt: [What is the name of the Song by Adriano Celentano which has lyrics in
+fake English language?](https://www.youtube.com/watch?v=-VsmF9m_Nt8)
 
 
 ### mixtral-8x7b-instruct:
