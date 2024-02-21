@@ -6,7 +6,7 @@
 # ask the user for a persona
 # send the prompt to the API - get the responses from n=9 different AI models
 #
-# Keep the complete request and resonse metadata in json files (postman/newman doq this)
+# Keep the complete request and response metadata in json files (postman/newman do this)
 #
 #
 # Required dependencies:
