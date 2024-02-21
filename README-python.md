@@ -19,23 +19,26 @@
 ### On the command line
 
 ```bash
-...
-
-Extracted answer from model mixtral-8x7b-instruct into 'final_output/celentano-song.tmp.txt'
+# show progress, takes ~30 seconds
+Extracted answer from model mixtral-8x7b-instruct  into 'final_output/celentano-song.tmp.txt'
 Extracted answer from model codellama-70b-instruct into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model llama-2-70b-chat into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model pplx-70b-chat into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model llama-2-70b-chat       into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model pplx-70b-chat          into 'final_output/celentano-song.tmp.txt'
 Extracted answer from model codellama-34b-instruct into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model pplx-7b-online into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model mistral-7b-instruct into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model pplx-70b-online into 'final_output/celentano-song.tmp.txt'
-Extracted answer from model pplx-7b-chat into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model pplx-7b-online         into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model mistral-7b-instruct    into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model pplx-70b-online        into 'final_output/celentano-song.tmp.txt'
+Extracted answer from model pplx-7b-chat           into 'final_output/celentano-song.tmp.txt'
+# ... Consolidating into final_output/celentano-song.txt not shown.
+# done.
 ```
 
-### In the file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)
+### Final output file
+
+All `*.tmp.txt` files get consolidated into a single file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)
 
 ```markdown
-    # celentano-song.txt
+# celentano-song.txt
 
 Prompt: What is the name of the Song by Adriano Celentano which has lyrics in
 fake English language?
