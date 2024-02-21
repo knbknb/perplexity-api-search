@@ -7,7 +7,7 @@
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
-            "args": ["--prompt", "what was the ore, alloy or mine that ancient damascus steel was made from?", "--slug", "damascus-steel"],
+            "args": ["--prompt", "what is 'a midsummer nights dream about?", "--slug", "mid-summer-night-dream"],
         }
     ]
 }
