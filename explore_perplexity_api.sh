@@ -150,10 +150,10 @@ read -p "Press enter to continue"
 mkdir -p queries json_extracted newman final_output
 # works
 # manual prerequisite one-off task: extract Postman environment info into a .json file
-collection_file="Perplexity API export.postman_collection.json"
-environment_file="perplexity-API-export-environment.json"
+collection_file="postman/Perplexity API export.postman_collection.json"
+environment_file="postman/perplexity-API-export-environment.json"
 # this file should NOT be checked into git - contains the API key
-modif_environment_file="perplexity-API-export-environment-with-cleartext-key.json"
+modif_environment_file="postman/perplexity-API-export-environment-with-cleartext-key.json"
 
 html_outdir=newman
 json_outdir=json_extracted

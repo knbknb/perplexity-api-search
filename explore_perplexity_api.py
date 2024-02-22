@@ -45,14 +45,14 @@ def main(api_key):
     directories = ['queries', 'json_extracted', 'newman', 'final_output']
     tools = ['newman']
     check_prerequisites(api_key, tools, directories)
-    models = prepare_environment_files("perplexity-API-export-environment.json",
-                                       "perplexity-API-export-environment-with-cleartext-key.json",
+    models = prepare_environment_files("postman/perplexity-API-export-environment.json",
+                                       "postman/perplexity-API-export-environment-with-cleartext-key.json",
                                        api_key)
     
     model_processor = ModelProcessor()
     #models = models[0:2]
-    model_processor.process_models(models, args, "Perplexity API export.postman_collection.json",
-                   "perplexity-API-export-environment-with-cleartext-key.json",
+    model_processor.process_models(models, args, "postman/Perplexity API export.postman_collection.json",
+                   "postman/perplexity-API-export-environment-with-cleartext-key.json",
                    "queries", "newman", "json_extracted")
     
     tmp_txt_file = combine_json_files("json_extracted", 
