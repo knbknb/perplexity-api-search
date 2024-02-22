@@ -35,7 +35,7 @@ Extracted answer from model pplx-7b-chat           into 'final_output/celentano-
 
 ### Final output file
 
-All `*.tmp.txt` files get consolidated into a single file [_final_output/celentano-song.txt_](final_output/celentano-song.txt)
+All `*.tmp.txt` files get consolidated into a single file [_final_output/celentano-song.txt_](..//final_output/celentano-song.txt)
 
 ```markdown
 # celentano-song.txt

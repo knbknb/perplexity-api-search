@@ -6,7 +6,7 @@
 In a Terminal, using a shell script, send your human-language query to various AI systems/models, in a single loop.
 Collect the responses an put them in a pretty textfile.
 
-See Shell Script [`explore_perlplexity_api.sh`](explore_perplexity_api.sh) - work in progress
+See Shell Script [`explore_perlplexity_api.sh`](../explore_perplexity_api.sh) - work in progress
 
 ## Prerequisites / Installation
 
@@ -37,7 +37,7 @@ Get it here: [Postman](https://getpostman.com), the GUI App. It is commercial, b
 
 Ask a query and get a pretty textfile with the responses from various AI systems/models, see [README-verbose.md](README-verbose.md) for more details.
 
-The shell script [`explore_perlplexity_api.sh`](./explore_perplexity_api.sh) controls the NodeJS app `"newman"`, and newman loads artifacts exported from Postman.
+The shell script [`explore_perlplexity_api.sh`](../explore_perplexity_api.sh) controls the NodeJS app `"newman"`, and newman loads artifacts exported from Postman.
 
 On host "well", newman 6.0.0 is installed on Node 16 (use nvm to switch to 16). Attention: `npm` 10 does not work with Node 16.
 

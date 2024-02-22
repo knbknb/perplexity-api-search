@@ -12,16 +12,16 @@ Running the script is not free of charge. You need to be a paying customer to us
 ##### See
 
 - Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py) - rewrite of shell script .  
-- [README-python.md](README-python.md) for more details.  - has fewer dependencies than the shell script (which was a first implementation).
+- [README-python.md](doc/README-python.md) for more details.  - has fewer dependencies than the shell script (which was a first implementation).
 - Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - first prototype .  
-- [README-shell.md](README-shell.md) for more details.
+- [README-shell.md](doc/README-shell.md) for more details.
 
 ## Installation
 
-See [INSTALL.md](INSTALL.md) for more details.
+See [INSTALL.md](doc/INSTALL.md) for more details.
 
 ## Future Work
 
 - Make setting the "custom instruction" more flexible, and more interactive.
 - ~~Finish the Python rewrite of this script.~~
-- See [TODO.md](TODO.md) for more details.
+- See [TODO.md](doc/TODO.md) for more details.

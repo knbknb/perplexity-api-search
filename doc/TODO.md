@@ -4,7 +4,7 @@
 ### ~~Upload as Github Gist~~
 
 ~~Write a helper shellscript that uplaods each .txt output file to github, as a Gist, for sharing.~~
-    - Done, see [upload_as_github_gist.sh](upload_as_github_gist.sh)
+    - Done, see [upload_as_github_gist.sh](../upload_as_github_gist.sh)
 
 ### The "find-assistant" script
 
@@ -22,7 +22,7 @@ Response:
 
 The shell will turn into this:
 
-![terminal window screenshot](resources/find-assistant-screenshot-terminalwindow-ann.png)
+![terminal window screenshot](../resources/find-assistant-screenshot-terminalwindow-ann.png)
 
 (1) Is your prompt after hitting `<enter>`  
 (2) Shows a full expansion of the preview text shown in (1)

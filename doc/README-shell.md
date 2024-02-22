@@ -28,4 +28,3 @@ This is a one-shot question, not a conversation.
 ##### Example output:
 
 See [README-verbose.md](README-verbose.md) for more details.
-
