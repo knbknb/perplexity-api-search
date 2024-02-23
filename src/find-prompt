@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 # use this to change the custom instruction (ci) CLI option of the explore_perplexity script
-# curl -sL https://raw.githubusercontent.com/awesome-assistants/awesome-assistants/main/assistants.yml \
-# < /home/knut/code/git/ai-stuff/awesome-chatgpt-prompts/prompts-grouped-sorted.semi.csv \
-curl -sL https://raw.githubusercontent.com/knbknb/awesome-chatgpt-prompts/knb-2024/prompts-grouped-sorted.semi.csv \
+data_url="https://raw.githubusercontent.com/knbknb/awesome-chatgpt-prompts/knb-2024/prompts-grouped-sorted.semi.csv"
+curl -sL $data_url \
  | fzf -1 -q "$1" --delimiter "\t" --preview 'echo export ci={1} | fold -s -w $(tput cols)' 
-#| cut -d"	" -f2
+
+# `fzf -1 -q "$1" --delimiter "\t"`: 
+# `fzf` is a command-line fuzzy finder. It takes the data from `curl` 
+# and allows you to interactively search through it. 
+# The `-1` option makes `fzf` automatically select the item if there's only one match. The `-q "$1"` option pre-fills the search query with the first argument passed to the script. 
+# The `--delimiter "\t"` option sets the field delimiter to a tab character.
+
+# `--preview 'echo export ci={1} | fold -s -w $(tput cols)'`: 
+# This option configures a preview window that shows the result of the command
+# inside the quotes for the currently selected item. 
+# The `{1}` placeholder is replaced with the value of the first field of the currently selected item.
+#  The `fold -s -w $(tput cols)` command wraps the output to fit within the width of the terminal.

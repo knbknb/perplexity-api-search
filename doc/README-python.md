@@ -1,13 +1,13 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Querying the Perplexity APIs with Python
 
-##### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM APIs  in a single loop.
+#### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM APIs  in a single loop.
 
-##### See Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py) - has fewer dependencies than the shell script [`explore_perplexity_api.sh`](explore_perplexity_api.sh).
+#### See Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py) - has fewer dependencies than the shell script [`explore_perplexity_api.sh`](explore_perplexity_api.sh).
 
 ##### The python script collects the API responses and puts them in a pretty textfile, for you to read and compare model outputs.
 
-## Example call:
+### Example call:
 
 ```bash
 ./explore_perplexity_api.py --slug celentano-song \
