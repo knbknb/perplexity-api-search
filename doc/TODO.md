@@ -12,7 +12,7 @@
 
 Forked from [awesome-chatgpt-prompts]([https://](https://github.com/f/awesome-chatgpt-prompts)) repo. Fewer prompts, n=140, but more focused on chatbot-like prompts.
 
-I am using [my own fork of that repo](https://github.com/knbknb/awesome-chatgpt-prompts), to make it easier to maintain and update the list of custom instructions.
+I am using **[my own fork of that repo](https://github.com/knbknb/awesome-chatgpt-prompts/tree/knb-2024)**, to make it easier to maintain and update the list of custom instructions.
 
 ### The "find-assistant" script
 
