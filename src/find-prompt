@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
 # use this to change the custom instruction (ci) CLI option of the explore_perplexity script
 data_url="https://raw.githubusercontent.com/knbknb/awesome-chatgpt-prompts/knb-2024/prompts-grouped-sorted.semi.csv"
-curl -sL $data_url \
- | fzf -1 -q "$1" --delimiter "\t" --preview 'echo export ci={1} | fold -s -w $(tput cols)' 
+data_file="data.txt"
+# simple caching
+if [ ! -f "$data_file" ]; then
+    curl -sL $data_url > $data_file
+fi
+
+# "ci" is the custom instruction variable, only in scope in preview window
+
+# Fetch data and feed into fzf
+cat $data_file \
+ | fzf -1 -q "$1" --delimiter "\t" --preview 'echo "{1}" | fold -s -w $(tput cols)'
 
 # `fzf -1 -q "$1" --delimiter "\t"`: 
 # `fzf` is a command-line fuzzy finder. It takes the data from `curl` 
@@ -10,7 +19,7 @@ curl -sL $data_url \
 # The `-1` option makes `fzf` automatically select the item if there's only one match. The `-q "$1"` option pre-fills the search query with the first argument passed to the script. 
 # The `--delimiter "\t"` option sets the field delimiter to a tab character.
 
-# `--preview 'echo export ci={1} | fold -s -w $(tput cols)'`: 
+# `--preview 'echo "{1}" | fold -s -w $(tput cols)'`: 
 # This option configures a preview window that shows the result of the command
 # inside the quotes for the currently selected item. 
 # The `{1}` placeholder is replaced with the value of the first field of the currently selected item.

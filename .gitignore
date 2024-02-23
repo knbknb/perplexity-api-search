@@ -7,3 +7,4 @@ final_output/*
 !final_output/celentano-song.txt
 json_all/*
 src/__pycache__/*
+src/data.txt
