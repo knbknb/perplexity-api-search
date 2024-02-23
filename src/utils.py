@@ -116,6 +116,7 @@ def reformat_with_hyperlink_protection(input_file, output_file, max_width=80):
             skip = False
             for wrapped_line in wrapped_lines:
                 for match in re.findall(headline_pattern, wrapped_line):
+                    match = match.replace('>', '')
                     outfile.write('\n\n' + match + "\n\n")
                     skip = True
                 if not skip:
@@ -135,14 +136,14 @@ def save_txt_output(json_data, outfile_text, prompt):
 
     # Write the extracted data to the output file
     with open(outfile_text, 'w') as file:
-        file.write(f"Prompt: {prompt}\n\n")
+        file.write(f"> Prompt: {prompt}\n\n")
         for item in extracted_data:
             if not 'choices' in item:
                 continue
             print(f"Extracted answer from model {item['model']} into '{outfile_text}'")
             file.write(f"\n\n### {item['model']}: \n")
             file.write(f"{item['choices'][0]['message']['content']}\n")
-        file.write(f"\n\nPrompt: {prompt}\n")
+        file.write(f"\n\n\n> Prompt: {prompt}\n")
     return outfile_text
 
 def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug=""):
