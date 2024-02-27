@@ -48,4 +48,3 @@ These command line tools must be installed:
 - `yq`, the YAML parser
 - `jq`, the JSON parser
 - `curl`, the HTTP client
-

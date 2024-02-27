@@ -121,12 +121,13 @@ def reformat_with_hyperlink_protection(input_file, output_file, max_width=80):
                     skip = True
                 if not skip:
                     outfile.write(wrapped_line + '\n')
-                else: skip = False
+                else: 
+                    skip = False
             # Re-insert original hyperlinks without breaks
             for match in re.findall(hyperlink_pattern, line):
                 outfile.write(match + '\n') 
 
-def save_txt_output(json_data, outfile_text, prompt):
+def save_txt_output(json_data, outfile_text, prompt, persona):
     '''
     Extracts the message content from each JSON object and appends it to a text file.
     Returns the path to the output file.
@@ -136,17 +137,17 @@ def save_txt_output(json_data, outfile_text, prompt):
 
     # Write the extracted data to the output file
     with open(outfile_text, 'w') as file:
-        file.write(f"> Prompt: {prompt}\n\n")
+        file.write(f'> Prompt: {prompt}\n\nPersona: {persona}\n\n')
         for item in extracted_data:
-            if not 'choices' in item:
+            if 'choices' not in item:
                 continue
             print(f"Extracted answer from model {item['model']} into '{outfile_text}'")
             file.write(f"\n\n### {item['model']}: \n")
             file.write(f"{item['choices'][0]['message']['content']}\n")
-        file.write(f"\n\n\n> Prompt: {prompt}\n")
+        file.write(f'> Prompt: {prompt}\n\nPersona: {persona}\n\n')
     return outfile_text
 
-def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug=""):
+def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug="", persona="Default Persona"):
     '''
     Combines JSON files matching the slug pattern into a single JSON file.
     Returns the path to the output file.
@@ -174,5 +175,5 @@ def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", pr
     # save_json_data(json_data, outfile)
 
     # Write the extracted data to a humanreadable text output file
-    outfile_text = save_txt_output(json_data, outfile_text, prompt)
+    outfile_text = save_txt_output(json_data, outfile_text, prompt, persona)
     return outfile_text
