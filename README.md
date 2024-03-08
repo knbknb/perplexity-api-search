@@ -9,7 +9,7 @@ A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.
 
 The goals are
 
-- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards).  
+- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards). This means personally reading the API responses saved in a textfile, not systematically benchmarking the models.  
 - Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with [Newman](https://www.npmjs.com/package/newman)), thus exerting very fine-grained control over the API calls.
 
 Running the script is not free of charge. You need to be a paying customer to use this script. It requires an API key, available only to "Perplexity Pro" users. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
