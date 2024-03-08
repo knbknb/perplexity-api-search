@@ -1,13 +1,16 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
-# Querying the Perplexity API
+# Querying the Perplexity Web-APIs
 
 ... with a single shell command.
 
 #### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM API endpoint paths.  
 
-A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.ai/blog/introducing-pplx-online-llms).  This is a work in progress.  
-The goal is to make it easy to query the Perplexity.ai API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards).  
-It also demonstrates how to use a Postman collection (and Postman environment file) from the command line (with [Newman](https://www.npmjs.com/package/newman)), thus exerting very fine-grained control over the API calls.
+A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.ai/blog/introducing-pplx-online-llms).  This is a work in progress.
+
+The goals are
+
+- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards).  
+- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with [Newman](https://www.npmjs.com/package/newman)), thus exerting very fine-grained control over the API calls.
 
 Running the script is not free of charge. You need to be a paying customer to use this script. It requires an API key, available only to "Perplexity Pro" users. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
 

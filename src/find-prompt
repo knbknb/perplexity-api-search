@@ -1,17 +1,20 @@
 #!/usr/bin/env bash
+#set -euo pipefail
+#set IFS=$'\n\t'
 # use this to change the custom instruction (ci) CLI option of the explore_perplexity script
-data_url="https://raw.githubusercontent.com/knbknb/awesome-chatgpt-prompts/knb-2024/prompts-grouped-sorted.semi.csv"
+data_url="https://raw.githubusercontent.com/knbknb/awesome-chatgpt-prompts/knb-2024/prompts-grouped-sorted.csv"
 data_file="data.txt"
 # simple caching
 if [ ! -f "$data_file" ]; then
-    curl -sL $data_url > $data_file
+    curl -sL -H "Cache-Control: no-cache" $data_url > $data_file
 fi
 
 # "ci" is the custom instruction variable, only in scope in preview window
 
 # Fetch data and feed into fzf
 cat $data_file \
- | fzf -1 -q "$1" --delimiter "\t" --preview 'echo "{1}" | fold -s -w $(tput cols)'
+ | fzf -1 -q "$1" --delimiter "\t" --preview 'echo "{1}" | fold -s -w $(tput cols)' \
+ | perl -pe "s/^/export CI='/; s/\$/';/"
 
 # `fzf -1 -q "$1" --delimiter "\t"`: 
 # `fzf` is a command-line fuzzy finder. It takes the data from `curl` 

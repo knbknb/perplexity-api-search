@@ -8,3 +8,4 @@ final_output/*
 json_all/*
 src/__pycache__/*
 src/data.txt
+data.txt
