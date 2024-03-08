@@ -7,7 +7,16 @@
 
 ##### The python script collects the API responses and puts them in a pretty textfile, for you to read and compare model outputs.
 
-### Example call:
+### Example
+
+I vaguely remember a song by Adriano Celentano which has lyrics in fake English language. 
+
+Q: _What is the name of the song?_
+
+Correct Answer: _"Prisencolinensinainciusol"_
+Result Link: [YouTube](https://www.youtube.com/watch?v=-VsmF9m_Nt8)
+
+#### Terminal command:
 
 ```bash
 ./explore_perplexity_api.py --slug celentano-song \
@@ -42,8 +51,6 @@ All `*.tmp.txt` files get consolidated into a single file [_final_output/celenta
 
 Prompt: What is the name of the Song by Adriano Celentano which has lyrics in
 fake English language?
-
-(https://www.youtube.com/watch?v=-VsmF9m_Nt8)
 
 
 ### mixtral-8x7b-instruct:
