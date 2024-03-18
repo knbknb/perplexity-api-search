@@ -82,7 +82,7 @@ def extract_models(environment_file):
     '''
     with open(environment_file) as file:
         data = json.load(file)
-        models = [value["value"] for value in data["environment"]["values"] if value["key"] == "model"]
+        models = [value["value"] for value in data["environment"]["values"] if value["key"] == "model" and value["enabled"] == True]
     return models #[:1]
 
 def prepare_environment_files(environment_file, modif_environment_file, api_key):
@@ -134,6 +134,7 @@ def save_txt_output(json_data, outfile_text, prompt, persona):
     '''
     # Extract the message content from each JSON object
     extracted_data = [item for sublist in json_data for item in sublist]
+    extracted_data = sorted(extracted_data, key=lambda item: item['model'])
 
     # Write the extracted data to the output file
     with open(outfile_text, 'w') as file:
