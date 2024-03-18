@@ -6,41 +6,39 @@
 ~~Write a helper shellscript that uplaods each .txt output file to github, as a Gist, for sharing.~~
     - Done, see [upload_as_github_gist.sh](./upload_as_github_gist.sh). Rarely used in practice
 
-### The "find-prompt" script
+### The "find-persona" script
 
-Used in practice, because it is easy to use and maintain.
-Provide a selection of "personas" to the user, and let them choose one. The script will then pass the chosen persona as an additional argument to the AI system.
+~~Used in practice, because it is easy to use and maintain.Provide a selection of "personas" to the user, and let them choose one. The script will then pass the chosen persona as an additional argument to the AI system.~~
 
-The script is called "`find-prompt`", because the repository I've forked it from is called "[awesome-chatgpt-prompts]([https://](https://github.com/f/awesome-chatgpt-prompts))",  misleadingly. Few prompts, n~140, but more focused on chatbot-like prompts.
+The script is called "`find-persona`". 
 
 More importantly,
 
-- I am using **[my own fork of that repo](https://github.com/knbknb/awesome-chatgpt-prompts/tree/knb-2024)**, to make it easier to maintain and update the list of custom instructions.
-- Personas are **grouped by topic or category**, e.g. "IT", "Business", "Comm. and Lang.", etc.
-
+- I am using **[my repo](https://github.com/knbknb/ai-system-personas)**, to make it easier to maintain and update a list of custom instructions.
+- Personas are **grouped by topic or category**, e.g. "IT", "Business", "Health", "Comm.+L ang.", etc.
 
 Usage:
 
 ```bash
-find-prompt Aristotle <enter>
+find-persona Aristotle <enter>
 ```
 
 Response:
 
-The shell will turn into this:
+The shell will turn into something similar to this:
+
+![find-persona screenshot](../resources/find-persona-screenshot-terminalwindow.png)
+
+The output of your selection can be passed to any AI systems GUI or API. 
+
+### The "find-assistant" script
+
+Second, alternative approach. Rich in emojis 👩‍🏫+ , but not used in practice.
 
 ![terminal window screenshot](../resources/find-assistant-screenshot-terminalwindow-ann.png)
 
 (1) Is your prompt after hitting `<enter>`  
 (2) Shows a full expansion of the preview text shown in (1)
-
-This will not be passed to the AI systems yet. It is just a potential future improvement to the script, to help you find  more focused results.
-
-### The "find-assistant" script
-
-Second approach.
-
-Rich in emojis 👩‍🏫+ , but not used in practice.
 
 ##### (Under construction)
 
