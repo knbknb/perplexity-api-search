@@ -1,7 +1,7 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Querying the Perplexity Web-APIs
 
-... with a single shell command.
+... with a simple Python script.
 
 #### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM API endpoint paths.  
 
@@ -9,10 +9,14 @@ A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.
 
 The goals are
 
-- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards). This means personally reading the API responses saved in a textfile, not systematically benchmarking the models.  
-- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with [Newman](https://www.npmjs.com/package/newman)), thus exerting very fine-grained control over the API calls.
+- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards). This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
+- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with the [Newman](https://www.npmjs.com/package/newman) CLI tool), thus exerting very fine-grained control over the API calls.
 
-Running the script is not free of charge. You need to be a paying customer to use this script. It requires an API key, available only to "Perplexity Pro" users. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
+## API Key required
+
+Running the script requires an API key, available only to "Perplexity Pro" users. Thus running the script is not free of charge. You need to be a registered customer to use this script. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
+
+I think there is a free 5$-per-month plan, which is the cheapest option. If your API usage is low, you might be able to use the API for free.
 
 ##### See
 
