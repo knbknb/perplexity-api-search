@@ -29,6 +29,7 @@ def parse_arguments():
     parser.add_argument('--slug', required=True, help='Prompt slug')
     parser.add_argument('--persona', default="Default Persona", help='Persona')
     parser.add_argument('--persona-slug', help='Persona slug')
+    parser.add_argument('--model-type', help='Model type to use (small, online, instruct, code)')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     return parser.parse_args()
 
