@@ -138,14 +138,14 @@ def save_txt_output(json_data, outfile_text, prompt, persona):
 
     # Write the extracted data to the output file
     with open(outfile_text, 'w') as file:
-        file.write(f'> Prompt: {prompt}\n\nPersona: {persona}\n\n')
+        file.write(f'> Prompt: {prompt}\n\n> Persona: {persona}\n\n{"-" * 50}\n\n')
         for item in extracted_data:
             if 'choices' not in item:
                 continue
             print(f"Extracted answer from model {item['model']} into '{outfile_text}'")
             file.write(f"\n\n### {item['model']}: \n")
             file.write(f"{item['choices'][0]['message']['content']}\n")
-        file.write(f'> Prompt: {prompt}\n\nPersona: {persona}\n\n')
+        file.write(f'.\n\n{"-" * 50}\n\n> Prompt: {prompt}\n\n> Persona: {persona}\n\n')
     return outfile_text
 
 def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug="", persona="Default Persona"):
