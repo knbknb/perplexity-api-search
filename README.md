@@ -9,8 +9,8 @@ A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.
 
 The goals are
 
-- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards). This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
-- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with the [Newman](https://www.npmjs.com/package/newman) CLI tool), thus exerting very fine-grained control over the API calls.
+- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards) available. This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
+- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with the [Newman](https://www.npmjs.com/package/newman) CLI tool), thus exerting very fine-grained control over the API calls, and conserving the responses with lots of metadata (e.g., runtime duration).
 
 ## API Key required
 
