@@ -58,9 +58,11 @@ def main(api_key):
     
     tmp_txt_file = combine_json_files("json_extracted", 
                         "final_output", args.prompt, args.slug, args.persona)
-    output_file = tmp_txt_file.replace(".tmp.txt", ".txt")
+    output_file = tmp_txt_file.replace(".tmp.txt", ".md")
+    # reformats and also renames the file
     reformat_with_hyperlink_protection(tmp_txt_file, output_file, max_width=80)
-    
+    print (f"Output file: {output_file}")
+
     try:
         os.remove(tmp_txt_file)
     except FileNotFoundError:
