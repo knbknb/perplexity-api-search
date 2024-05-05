@@ -44,6 +44,8 @@ pplx-7b-online:         Saving into  queries/sleigh-racing--pplx-7b-online.json
 pplx-70b-online:        Saving into  queries/sleigh-racing--pplx-70b-online.json
 ```
 
+Most of these "pplx-" models have been retired by Perplexity, and were replaced with better models called "sonar-". However the script will still run.
+
 ##### API response:
 
 ##### (Converted to pretty textfile:)

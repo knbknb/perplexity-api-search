@@ -10,34 +10,22 @@
         "enabled": true
       },
       {
-        "key": "models",
-        "value": "[ { \"Model\": \"codellama-34b-instruct\",\n        \"Context Length\": 16384,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"llama-2-70b-chat\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"mistral-7b-instruct\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-7b-chat\",\n        \"Context Length\": 8192,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-70b-chat\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-7b-online\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    },\n    {\n        \"Model\": \"pplx-70b-online\",\n        \"Context Length\": 4096,\n        \"Model Type\": \"Chat Completion\"\n    }\n]",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "model",
-        "value": "codellama-34b-instruct",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "model",
-        "value": "codellama-70b-instruct",
+        "key": "baseUrl",
+        "value": "https://api.perplexity.ai",
         "type": "default",
         "enabled": true
       },
       {
         "key": "model",
-        "value": "llama-2-70b-chat",
+        "value": "llama-3-8b-instruct",
         "type": "default",
         "enabled": false
       },
       {
         "key": "model",
-        "value": "mistral-7b-instruct",
+        "value": "llama-3-70b-instruct",
         "type": "default",
-        "enabled": true
+        "enabled": false
       },
       {
         "key": "model",
@@ -47,61 +35,25 @@
       },
       {
         "key": "model",
-        "value": "mixtral-8x22b-instruct",
-        "type": "default",
-        "enabled": true
-      },      
-      {
-        "key": "model",
-        "value": "pplx-7b-chat",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "model",
-        "value": "pplx-70b-chat",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "model",
-        "value": "pplx-7b-online",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "model",
-        "value": "pplx-70b-online",
-        "type": "default",
-        "enabled": false
-      },
-      {
-        "key": "baseUrl",
-        "value": "https://api.perplexity.ai",
+        "value": "llama-3-sonar-small-32k-chat",
         "type": "default",
         "enabled": true
       },
       {
         "key": "model",
-        "value": "sonar-small-chat",
+        "value": "llama-3-sonar-small-32k-online",
         "type": "default",
         "enabled": true
       },
       {
         "key": "model",
-        "value": "sonar-medium-chat",
+        "value": "llama-3-sonar-large-32k-chat",
         "type": "default",
         "enabled": true
       },
       {
         "key": "model",
-        "value": "sonar-small-online",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "sonar-medium-online",
+        "value": "llama-3-sonar-large-32k-online",
         "type": "default",
         "enabled": true
       }
