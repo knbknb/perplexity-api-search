@@ -57,7 +57,7 @@ def main(api_key):
                    "queries", "newman", "json_extracted")
     
     tmp_txt_file = combine_json_files("json_extracted", 
-                        "final_output", args.prompt, args.slug, args.persona)
+                        "final_output", args.prompt, args.slug, args.persona, args.persona_slug)
     output_file = tmp_txt_file.replace(".tmp.txt", ".md")
     # reformats and also renames the file
     reformat_with_hyperlink_protection(tmp_txt_file, output_file, max_width=80)

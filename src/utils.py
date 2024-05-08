@@ -148,7 +148,7 @@ def save_txt_output(json_data, outfile_text, prompt, persona):
         file.write(f'.\n\n{"-" * 50}\n\n> Prompt: {prompt}\n\n> Persona: {persona}\n\n')
     return outfile_text
 
-def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug="", persona="Default Persona"):
+def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", prompt="", slug="", persona="Default Persona", persona_slug=""):
     '''
     Combines JSON files matching the slug pattern into a single JSON file.
     Returns the path to the output file.
@@ -166,7 +166,7 @@ def combine_json_files(subdir_in="json_extracted", subdir_out="final_output", pr
             data = json.load(f)
             json_data.append(data)
 
-    outfile_temp = f"{slug}.tmp.txt"
+    outfile_temp = f"{slug}--{persona_slug}.tmp.txt"
     outfile_text = os.path.join(subdir_out, outfile_temp)
     
     # Write the combined JSON data to a new JSON file 
