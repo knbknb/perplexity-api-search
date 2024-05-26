@@ -1,6 +1,8 @@
 {
+    "MD013": false, # line-length < 80
     "MD041": false,
     "MD012": false,
     "MD026": false,
-    "MD032": false
+    "MD032": false,
+    "MD029": false
 }

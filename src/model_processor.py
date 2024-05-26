@@ -42,14 +42,14 @@ class ModelProcessor:
             # It is recommended to use only single-turn conversations 
             # and avoid system prompts for the online LLMs (sonar-small-online and sonar-medium-online).
             if args.persona:
-                print("Warning: Online models are not recommended for multi-turn conversations")
-                args.persona = ""
+                print("Warning: Online models ignore the custom instruction and are not recommended for multi-turn conversations")
+                args.persona = "ignored-for-online-models"
             return [model for model in models if "online" in model]
         elif model_type == "instruct":
             return [model for model in models if "instruct" in model]
-        elif model_type == "code":
+        elif model_type == "chat":
             # filter for 8x7b, 34B, 70B by using a regex 
-            return [model for model in models if re.search(r'(8x7b|34b|70b|chat)', model)]
+            return [model for model in models if re.search(r'(chat)', model)]
         else:
             return models
 

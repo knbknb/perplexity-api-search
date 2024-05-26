@@ -19,13 +19,13 @@
         "key": "model",
         "value": "llama-3-8b-instruct",
         "type": "default",
-        "enabled": false
+        "enabled": true
       },
       {
         "key": "model",
         "value": "llama-3-70b-instruct",
         "type": "default",
-        "enabled": false
+        "enabled": true
       },
       {
         "key": "model",
