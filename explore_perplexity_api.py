@@ -21,7 +21,7 @@ from dotenv import load_dotenv
 
 from validator import Validator
 from model_processor import ModelProcessor
-from utils import combine_json_files, prepare_environment_files, reformat_with_hyperlink_protection
+from utils import combine_json_files, write_pm_env_file, reformat_with_hyperlink_protection
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description='Explore Perplexity API')
@@ -39,19 +39,48 @@ def check_prerequisites(api_key, tools, directories):
         validator.check_tools(tools)
         validator.check_directories(directories)
 
+def get_model_list():
+     #!/usr/bin/env python
+    import requests
+    from bs4 import BeautifulSoup
+
+    # Fetch the HTML
+    response = requests.get('https://docs.perplexity.ai/docs/model-cards')
+
+    # Parse the HTML
+    soup = BeautifulSoup(response.text, 'html.parser')
+
+    # Find the first and second tables
+    tables = soup.find_all('table')
+
+    # Function to print table rows as text, formatted as a table (lpad, rpad)
+    def get_model_names(table):
+        model_names = []
+        for row in table.find_all('tr'):
+            cells = [cell.text for cell in row.find_all('td')]
+        #    print(' '.join(cell.text for cell in row.find_all('td')))        # simpler version
+            if len(cells) == 4 :
+                model_names.append(cells[0].strip())
+        return model_names
+
+    model_names = []
+    for table in tables:
+        model_names.extend(get_model_names(table))
+
+    return model_names
+
 def main(api_key):
     args = parse_arguments()
     
     #(args.prompt, args.slug)
     directories = ['queries', 'json_extracted', 'newman', 'final_output']
     tools = ['newman']
+    models = get_model_list()
     check_prerequisites(api_key, tools, directories)
-    models = prepare_environment_files("postman/perplexity-API-export-environment.json",
+    write_pm_env_file(models, "postman/perplexity-API-export-environment.json",
                                        "postman/perplexity-API-export-environment-with-cleartext-key.json",
                                        api_key)
-    
     model_processor = ModelProcessor()
-    #models = models[0:2]
     model_processor.process_models(models, args, "postman/Perplexity API export.postman_collection.json",
                    "postman/perplexity-API-export-environment-with-cleartext-key.json",
                    "queries", "newman", "json_extracted")

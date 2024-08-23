@@ -65,29 +65,45 @@ def write_json_output_to_stdout(json_string):
     except (json.JSONDecodeError, KeyError) as e:
         print(f"Error processing JSON: {e}")
 
+def create_json_fragment(models):
+    json_data = []
+    for model in models:
+        my_dict = {
+            "key": "model",
+            "value": model,
+            "type": "default",
+            "enabled": True
+        }
+        json_data.append(my_dict)
+        
+    return json_data
 
-def write_pm_env_file(json_infile, json_outfile, PERPLEXITY_API_KEY):
+def write_pm_env_file(models, json_infile, json_outfile, PERPLEXITY_API_KEY):
     '''
     Writes a new Postman environment file on the fly, to include the API key.
     '''
+    json_data = create_json_fragment(models)
+    # extend loaded json file with the new model data and the API key    
     with open(json_infile, "r") as f:
         data = json.load(f)
         data["environment"]["values"][0]["value"] = PERPLEXITY_API_KEY
+        [data["environment"]["values"].append(d) for d in json_data]
+    
+    # write the new json file
     with open(json_outfile, "w") as f:
         json.dump(data, f)
 
-def extract_models(environment_file):
-    '''
-    Extracts the Perplexity API model names from the environment file.
-    '''
-    with open(environment_file) as file:
-        data = json.load(file)
-        models = [value["value"] for value in data["environment"]["values"] if value["key"] == "model" and value["enabled"] == True]
-    return models #[:1]
+#def extract_models(environment_file):
+#    '''
+#    Extracts the Perplexity API model names from the environment file.
+#    '''
+#    with open(environment_file) as file:
+#        data = json.load(file)
+#        models = [value["value"] for value in data["environment"]["values"] if value["key"] == "model" and value["enabled"] == True]
+#    return models #[:1]
 
-def prepare_environment_files(environment_file, modif_environment_file, api_key):
-    write_pm_env_file(environment_file, modif_environment_file, api_key)
-    return extract_models(environment_file)
+    
+    
 
 
 def reformat_txt_file(input_file, output_file, max_width=80):

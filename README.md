@@ -1,42 +1,34 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
-# Querying the Perplexity Web-APIs
+# Batch Prompting the Perplexity Web-APIs
 
-... with a simple Python script.
+... with Python + Postman/Newman.  
+A command-line script that will create _very_ verbose output with many details of the API requests and responses.
 
-#### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM API endpoint paths.  
+It is more a learning tool (for scripting Postman) than a practical one.
 
-A spare-time project to explore the [Perplexity.ai API](https://blog.perplexity.ai/blog/introducing-pplx-online-llms).  This is a work in progress.
+#### In a Linux terminal, send your human-language queries to Perplexity.ai's various LLMs.  
 
-The goals are
+A spare-time project to explore the [Perplexity.ai API endpoint paths](https://blog.perplexity.ai/blog/introducing-pplx-online-llms) and try a mix of different promts and models.
 
-- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards) available. This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
-- Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with the [Newman](https://www.npmjs.com/package/newman) CLI tool), thus exerting very fine-grained control over the API calls, and conserving the responses with lots of metadata (e.g., runtime duration).
+```bash
+./explore_perplexity_api.py --slug celentano-song \
+  --prompt "What is the name of the Song by Adriano Celentano which has lyrics in fake English language?" 
+```
 
-## API Key required
+- You need to have a Perplexity API key. Set it in the environment variable `PERPLEXITY_API_KEY`.
+- You need to have "Newman" installed. It is a command-line tool for running Postman collections.
 
-Running the script requires an API key, available only to "Perplexity Pro" users. Thus running the script is not free of charge. You need to be a registered customer to use this script. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
-
-I think there is a free 5$-per-month plan, which is the cheapest option. If your API usage is low, you might be able to use the API for free.
-
-##### See
-
-- Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py)  
-- [README-python.md](doc/README-python.md) for more details.
-- External Wiki: [mutable.ai](https://wiki.mutable.ai/knbknb/perplexity-api-search) - AI-generated documentation of this repo.
-- ~~Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - first prototype, no longer maintained.~~  
-- ~~[README-shell.md](doc/README-shell.md) for more details.~~
-
-
-## Installation
-
-See [INSTALL.md](doc/INSTALL.md) for more details.
-
-## Future Work
-
-- See [TODO.md](doc/TODO.md) for more details.
-- ~~Make setting the "custom instruction" more flexible, and more interactive.~~
-- ~~Finish the Python rewrite of this script.~~
+See [INSTALL.md](./doc/INSTALL.md) -- [README-python.md](./doc/README-python.md) -- [README-verbose](./doc/README-verbose.md) -- [TODO.md](./doc/TODO.md) for more details.
 
 ## License
 
 Use it as you like.
+
+## Note
+
+For simpler batch prompting via the command line, I recommend Simon Willison's [llm](https://github.com/simonw/llm) tool, `pip install llm`.
+
+`llm "Where is Plutonia?"`  
+`for loc in 'Literature' 'Computer Gaming'; do llm "Where is Plutonia in $loc?"; done`
+
+(Requires API keys for LLMs as well.)

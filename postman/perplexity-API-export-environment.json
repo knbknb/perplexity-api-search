@@ -14,48 +14,6 @@
         "value": "https://api.perplexity.ai",
         "type": "default",
         "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-8b-instruct",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-70b-instruct",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "mixtral-8x7b-instruct",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-sonar-small-32k-chat",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-sonar-small-32k-online",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-sonar-large-32k-chat",
-        "type": "default",
-        "enabled": true
-      },
-      {
-        "key": "model",
-        "value": "llama-3-sonar-large-32k-online",
-        "type": "default",
-        "enabled": true
       }
     ],
     "_postman_variable_scope": "environment",
