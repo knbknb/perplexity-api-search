@@ -4,7 +4,8 @@
 ... with Python + Postman/Newman.  
 A command-line script that will create _very_ verbose output with many details of the API requests and responses.
 
-It is more a learning tool (for scripting Postman) than a practical one.
+It is more a learning tool than a practical one.  
+I wanted to script Postman with Newman, and Newman with Python.
 
 #### In a Linux terminal, send your human-language queries to Perplexity.ai's various LLMs.  
 
@@ -12,7 +13,8 @@ A spare-time project to explore the [Perplexity.ai API endpoint paths](https://b
 
 ```bash
 ./explore_perplexity_api.py --slug celentano-song \
-  --prompt "What is the name of the Song by Adriano Celentano which has lyrics in fake English language?" 
+  --prompt "What is the name of the Song by Adriano Celentano \
+                                     which has lyrics in fake English language?" 
 ```
 
 - You need to have a Perplexity API key. Set it in the environment variable `PERPLEXITY_API_KEY`.

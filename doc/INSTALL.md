@@ -16,7 +16,7 @@ I think there is a free 5$-per-month plan, which is the cheapest option. If your
 
 - Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py)  
 - [README-python.md](doc/README-python.md) for more details.
-- External Wiki: [mutable.ai](https://wiki.mutable.ai/knbknb/perplexity-api-search) - AI-generated documentation of this repo.
+- External Wiki: [mutable.ai](https://wiki.mutable.ai/knbknb/perplexity-api-search) - AI-generated documentation of this repo. (From May 2024, cannot update this)
 - ~~Shell Script [`explore_perplexity_api.sh`](explore_perplexity_api.sh) - first prototype, no longer maintained.~~  
 - ~~[README-shell.md](doc/README-shell.md) for more details.~~
 

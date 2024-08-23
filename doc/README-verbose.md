@@ -1,8 +1,10 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
-# Querying the Perplexity API with Newman and Postman
+# Batch Prompting the Perplexity API with Newman and Postman
 
-##### Send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
-##### Collect the responses and put them in a pretty textfile.
+    THIS IS OUTPUT FROM AN OLD DEPRECATED VERSION OF THE SCRIPT. UNMAINTAINED. DO NOT USE.
+
+#### Send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
+#### Collect the responses and put them in a pretty textfile.
 
 See Shell Script [`explore_perplexity_api.sh`](../explore_perplexity_api.sh) - work in progress
 
