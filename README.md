@@ -30,7 +30,10 @@ Use it as you like.
 
 For simpler batch prompting via the command line, I recommend Simon Willison's [llm](https://github.com/simonw/llm) tool, `pip install llm`.
 
-`llm "Where is Plutonia?"`  
-`for loc in 'Literature' 'Computer Gaming'; do llm "Where is Plutonia in $loc?"; done`
+`llm "Where is Plutonia?"  # single query`  
+
+Small batch:
+
+    for loc in 'Literature' 'Computer Gaming'; do llm "Where is Plutonia in $loc?"; done
 
 (Requires API keys for LLMs as well.)
