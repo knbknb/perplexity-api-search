@@ -18,7 +18,7 @@ A spare-time project to explore the [Perplexity.ai API endpoint paths](https://b
 ```bash
 ./explore_perplexity_api.py --slug celentano-song \
   --prompt "What is the name of the Song by Adriano Celentano \
-                                     which has lyrics in fake English language?" 
+    that has lyrics in fake English language?" 
 ```
 
 - You need to have a Perplexity API key. Set it in the environment variable `PERPLEXITY_API_KEY`.

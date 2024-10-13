@@ -3,16 +3,21 @@
 
 The goals are
 
-- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/docs/model-cards) available. This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
+- Make it easy to query the Perplexity.ai Web-API endpoints from the command line, and to compare the results of [~10 different models](https://docs.perplexity.ai/guides/model-cards) available. This means saving the API responses into a textfile, then reading and inspecting them. I'm not systematically benchmarking the models.  
 - Demonstrate how to use a Postman collection `.json`-file (and Postman environment `.json`-file) from the command line (with the [Newman](https://www.npmjs.com/package/newman) CLI tool), thus exerting very fine-grained control over the API calls, and conserving the responses with lots of metadata (e.g., runtime duration).
 
 ## API Key required
 
 Running the script requires an API key, available only to "Perplexity Pro" users. Thus running the script is not free of charge. You need to be a registered customer to use this script. See [Perplexity API Pricing](https://docs.perplexity.ai/docs/pricing) for more details.
 
-I think there is a free 5$-per-month plan, which is the cheapest option. If your API usage is low, you might be able to use the API for free.
+The `.env` file is not included in the repository. You need to create it yourself. It should contain the following lines:
 
-##### See
+```bash
+##### .env-example 
+PERPLEXITY_API_KEY=pplx-1de8....
+PERPLEXITY_MODELCARD_URL=https://docs.perplexity.ai/guides/model-cards
+##### put this into the root directory of the repository
+```
 
 - Python Script [`explore_perplexity_api.py`](explore_perplexity_api.py)  
 - [README-python.md](doc/README-python.md) for more details.
@@ -21,9 +26,6 @@ I think there is a free 5$-per-month plan, which is the cheapest option. If your
 - ~~[README-shell.md](doc/README-shell.md) for more details.~~
 
 
-## Installation
-
-See [INSTALL.md](doc/INSTALL.md) for more details.
 
 ## Future Work
 

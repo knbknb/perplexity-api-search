@@ -35,9 +35,9 @@ def parse_arguments():
 
 def check_prerequisites(api_key, tools, directories):
         validator = Validator()
-        validator.check_perplexity_api_key(api_key)
-        validator.check_tools(tools)
-        validator.check_directories(directories)
+        validator.check_perplexity_api_key(api_key) # api key set?
+        validator.check_tools(tools)                # cli tools installed?
+        validator.check_directories(directories)    # local subdirectories exist?
 
 def get_model_list():
      #!/usr/bin/env python
@@ -45,7 +45,7 @@ def get_model_list():
     from bs4 import BeautifulSoup
 
     # Fetch the HTML
-    response = requests.get('https://docs.perplexity.ai/docs/model-cards')
+    response = requests.get(os.getenv('PERPLEXITY_MODELCARD_URL'))
 
     # Parse the HTML
     soup = BeautifulSoup(response.text, 'html.parser')
