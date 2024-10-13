@@ -1,7 +1,9 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Batch Prompting the Perplexity API with Newman and Postman
 
-    THIS IS OUTPUT FROM AN OLD DEPRECATED VERSION OF THE SCRIPT. UNMAINTAINED. DO NOT USE.
+```text
+THIS IS OUTPUT FROM AN OLD DEPRECATED VERSION OF THE SCRIPT. Unmaintained. DO NOT USE.
+```
 
 #### Send your human-language query to Perplexity.ai's various AI systems/models, in a single loop.  
 #### Collect the responses and put them in a pretty textfile.

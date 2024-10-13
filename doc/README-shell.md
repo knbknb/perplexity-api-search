@@ -1,7 +1,9 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Batch Prompting the Perplexity APIs with bash and newman
 
-    THIS ABOUT AN OLD DEPRECATED SHELLSCRIPT. UNMAINTAINED. DO NOT USE.
+```text
+THIS ABOUT AN OLD DEPRECATED SHELLSCRIPT. Unmaintained. DO NOT USE.
+```
 
 #### In a Linux terminal, send your human-language query to Perplexity.ai's various LLM APIs  in a single loop.
 

@@ -1,15 +1,19 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Batch Prompting the Perplexity Web-APIs
 
+```texr
 ... with Python + Postman/Newman.  
 A command-line script that will create _very_ verbose output with many details of the API requests and responses.
 
 It is more a learning tool than a practical one.  
-I wanted to script Postman with Newman, and Newman with Python.
+
+```
+
+The [Perplexity API endpoints](https://docs.perplexity.ai/docs/model-cards)   are actually just "wrappers" or fine-tuned variants of Meta's important family of models, the [Llama models](https://github.com/meta-llama/). So it is worth exploring them via that API. I know that there are many other ways to interact with the Llama models, but I wanted to try this one.
 
 #### In a Linux terminal, send your human-language queries to Perplexity.ai's various LLMs.  
 
-A spare-time project to explore the [Perplexity.ai API endpoint paths](https://blog.perplexity.ai/blog/introducing-pplx-online-llms) and try a mix of different promts and models.
+A spare-time project to explore the [Perplexity.ai API endpoint paths](https://blog.perplexity.ai/blog/introducing-pplx-online-llms) and try a mix of different prompts and models.
 
 ```bash
 ./explore_perplexity_api.py --slug celentano-song \

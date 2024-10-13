@@ -27,7 +27,7 @@ Result Link: [YouTube](https://www.youtube.com/watch?v=-VsmF9m_Nt8)
 
 ### On the command line
 
-This output can vary, depending on the models offered by Perplexity.ai.
+This output can vary, depending on the models offered by Perplexity.ai. These models were available at the time of writing, Spring 2024:
 
 ```bash
 # show progress, takes ~30 seconds
@@ -43,6 +43,8 @@ Extracted answer from model pplx-7b-chat           into 'final_output/celentano-
 # ... Consolidating into final_output/celentano-song.txt not shown.
 # done.
 ```
+
+As of fall 2024, the above list of models is invalid. Now the [Perplexity API endpoints](https://docs.perplexity.ai/docs/model-cards)   are actually just "wrappers" or fine-tuned variants of Meta's important family of models, the [Llama models](https://github.com/meta-llama/).
 
 ### Final output file
 
