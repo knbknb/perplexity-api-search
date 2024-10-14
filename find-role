@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+# Interactive selection of a system prompt/custom instruction/role on the command line.
+# knb 2024
+data_url="https://raw.githubusercontent.com/knbknb/ai-system-roles/refs/heads/main/data/roles-grouped-sorted.csv"
+
+# 
+# Make it operating system agnostic
+# - Check if tempdir is not already set
+# - Determine the operating system type
+# - Create a temporary directory with a specific template for macOS
+# - Create a temporary directory with a default template for other systems
+if [ -z "${tempdir:-}" ]; then
+    if [[ "$OSTYPE" == "darwin"* ]]; then
+        tempdir=$(mktemp -d -t find-prompt-datatable)
+    else
+        tempdir=$(mktemp -d)
+    fi
+fi
+
+cached_file="$tempdir/find-prompt-datatable.txt"
+
+# simple caching
+if [ ! -f "$cached_file" ]; then
+    echo "Will use cached document at $cached_file"
+    curl -sL -H "Cache-Control: no-cache" "$data_url" > "$cached_file"
+fi
+
+
+# Pipe the contents of the cached file to fzf for interactive selection.
+# Use fzf to filter and select an exact match based on the query provided as the first argument.
+# Preview the selected line by folding it to fit the terminal width.
+# Format the selected line to export it as an environment variable using Perl.
+cat $cached_file \
+ | fzf --select-1 --exact -q "$1" --delimiter "\t" --preview 'echo "{1}" | fold -s -w $(tput cols)' \
+ | perl -pe "s/^/export ROLE='/; s/\$/';/"
+
+# "ROLE" variable: Custom Instruction variable, only in scope in preview window
+
+# `fzf --select-1 -q "$1" --delimiter "\t"`: 
+# `fzf` is a command-line fuzzy finder. It takes the data from `curl` 
+# and allows you to interactively search through it. 
+# The `--select-1` option makes `fzf` automatically select the item if there's only one match. 
+# The `-q "$1"` option pre-fills the search query with the first argument passed to the script. 
+# The `--delimiter "\t"` option sets the field delimiter to a tab character.
+
+# `--preview 'echo "{1}" | fold -s -w $(tput cols)'`: 
+# This option configures a preview window that shows the result of the command
+# inside the quotes for the currently selected item. 
+# The `{1}` placeholder is replaced with the value of the first field of the currently selected item.
+#  The `fold -s -w $(tput cols)` command wraps the output to fit within the width of the terminal.
