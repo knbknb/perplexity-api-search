@@ -1,0 +1,1234 @@
+[
+    {
+        "Total Run Duration": "1607ms",
+        "Total Data Received": "484B",
+        "Average Response Time": "1554ms",
+        "Date": "Thursday, 11 April 2024 23:12:04",
+        "Model": "sonar-small-online",
+        "File Name": "dukes-in-gb--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "7.8s",
+        "Total Data Received": "2.41KB",
+        "Average Response Time": "7.7s",
+        "Date": "Saturday, 04 May 2024 11:46:44",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "python-import-from--it-profi--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.2s",
+        "Total Data Received": "995B",
+        "Average Response Time": "4.2s",
+        "Date": "Sunday, 19 May 2024 18:10:08",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "tatoos-in-pop--headline-generator--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "8.9s",
+        "Total Data Received": "3.44KB",
+        "Average Response Time": "8.9s",
+        "Date": "Sunday, 19 May 2024 17:47:18",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "parents-house--lifecoach--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "10.2s",
+        "Total Data Received": "2.72KB",
+        "Average Response Time": "10.1s",
+        "Date": "Sunday, 13 October 2024 20:40:44",
+        "Model": "llama-3.1-70b-instruct",
+        "File Name": "cost per kg to orbit--None--llama-3.1-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "11.4s",
+        "Total Data Received": "3.03KB",
+        "Average Response Time": "11.4s",
+        "Date": "Friday, 23 August 2024 09:01:19",
+        "Model": "llama-3.1-70b-instruct",
+        "File Name": "esport-tournaments--None--llama-3.1-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "5.4s",
+        "Total Data Received": "3.48KB",
+        "Average Response Time": "5.4s",
+        "Date": "Monday, 01 April 2024 12:00:55",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "yago-wikidata--wikipedia--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "920ms",
+        "Total Data Received": "521B",
+        "Average Response Time": "874ms",
+        "Date": "Sunday, 05 May 2024 17:25:49",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "ripley-books--ask-back--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "10s",
+        "Total Data Received": "2.48KB",
+        "Average Response Time": "10s",
+        "Date": "Thursday, 18 April 2024 20:55:48",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "cpdf-annotations--None--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.4s",
+        "Total Data Received": "1.24KB",
+        "Average Response Time": "2.4s",
+        "Date": "Wednesday, 08 May 2024 17:04:09",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "prod-markt-fit--editor--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.7s",
+        "Total Data Received": "1.69KB",
+        "Average Response Time": "3.7s",
+        "Date": "Friday, 19 April 2024 19:48:15",
+        "Model": "mistral-7b-instruct",
+        "File Name": "ai-benchmarks-descr--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1645ms",
+        "Total Data Received": "933B",
+        "Average Response Time": "1595ms",
+        "Date": "Thursday, 11 April 2024 19:42:05",
+        "Model": "mistral-7b-instruct",
+        "File Name": "kreuz-schriftzeichen--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1304ms",
+        "Total Data Received": "801B",
+        "Average Response Time": "1247ms",
+        "Date": "Friday, 03 May 2024 10:10:05",
+        "Model": "sonar-medium-chat",
+        "File Name": "gitlab-issue-mirroring--dev--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "6.8s",
+        "Total Data Received": "2.66KB",
+        "Average Response Time": "6.7s",
+        "Date": "Sunday, 19 May 2024 17:47:26",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "parents-house--lifecoach--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "3.4s",
+        "Total Data Received": "1.95KB",
+        "Average Response Time": "3.3s",
+        "Date": "Friday, 19 April 2024 19:48:26",
+        "Model": "sonar-small-chat",
+        "File Name": "ai-benchmarks-descr--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "2.7s",
+        "Total Data Received": "1.75KB",
+        "Average Response Time": "2.6s",
+        "Date": "Sunday, 19 May 2024 17:54:59",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "tatoos-in-pop--cosmetics--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.4s",
+        "Total Data Received": "1.37KB",
+        "Average Response Time": "2.3s",
+        "Date": "Saturday, 04 May 2024 11:46:35",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "python-import-from--it-profi--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "10.7s",
+        "Total Data Received": "2.65KB",
+        "Average Response Time": "10.6s",
+        "Date": "Friday, 19 April 2024 11:24:13",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "synesthesia--None--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1372ms",
+        "Total Data Received": "731B",
+        "Average Response Time": "1320ms",
+        "Date": "Thursday, 11 April 2024 23:11:54",
+        "Model": "mistral-7b-instruct",
+        "File Name": "dukes-in-gb--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "7.4s",
+        "Total Data Received": "1.91KB",
+        "Average Response Time": "7.4s",
+        "Date": "Saturday, 04 May 2024 11:46:27",
+        "Model": "codellama-70b-instruct",
+        "File Name": "python-import-from--it-profi--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1125ms",
+        "Total Data Received": "590B",
+        "Average Response Time": "1076ms",
+        "Date": "Sunday, 05 May 2024 11:59:00",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "2024-knowledge-cutoff--ask-back--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "2.3s",
+        "Total Data Received": "1.34KB",
+        "Average Response Time": "2.3s",
+        "Date": "Thursday, 11 April 2024 19:42:08",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "kreuz-schriftzeichen--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "1017B",
+        "Average Response Time": "3.3s",
+        "Date": "Friday, 03 May 2024 10:10:01",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "gitlab-issue-mirroring--dev--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.5s",
+        "Total Data Received": "1.6KB",
+        "Average Response Time": "2.4s",
+        "Date": "Saturday, 04 May 2024 11:46:52",
+        "Model": "sonar-medium-chat",
+        "File Name": "python-import-from--it-profi--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "5.9s",
+        "Total Data Received": "2.08KB",
+        "Average Response Time": "5.8s",
+        "Date": "Wednesday, 17 April 2024 22:30:39",
+        "Model": "sonar-medium-chat",
+        "File Name": "java-inner-classes--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "3.7s",
+        "Total Data Received": "1.73KB",
+        "Average Response Time": "3.6s",
+        "Date": "Saturday, 04 May 2024 11:46:49",
+        "Model": "sonar-small-chat",
+        "File Name": "python-import-from--it-profi--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "5.7s",
+        "Total Data Received": "1.5KB",
+        "Average Response Time": "5.7s",
+        "Date": "Friday, 03 May 2024 10:09:51",
+        "Model": "codellama-70b-instruct",
+        "File Name": "gitlab-issue-mirroring--dev--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "29.7s",
+        "Total Data Received": "3.75KB",
+        "Average Response Time": "29.6s",
+        "Date": "Sunday, 19 May 2024 17:48:24",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "parents-house--lifecoach--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "10.9s",
+        "Total Data Received": "1.65KB",
+        "Average Response Time": "10.8s",
+        "Date": "Sunday, 05 May 2024 17:26:07",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "ripley-books--ask-back--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "1060ms",
+        "Total Data Received": "613B",
+        "Average Response Time": "1009ms",
+        "Date": "Friday, 03 May 2024 10:10:03",
+        "Model": "sonar-small-chat",
+        "File Name": "gitlab-issue-mirroring--dev--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "3.5s",
+        "Total Data Received": "1.79KB",
+        "Average Response Time": "3.5s",
+        "Date": "Thursday, 18 April 2024 22:38:30",
+        "Model": "sonar-small-chat",
+        "File Name": "avalance--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "762ms",
+        "Total Data Received": "390B",
+        "Average Response Time": "710ms",
+        "Date": "Thursday, 11 April 2024 23:11:58",
+        "Model": "sonar-small-chat",
+        "File Name": "dukes-in-gb--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "6.3s",
+        "Total Data Received": "2.06KB",
+        "Average Response Time": "6.2s",
+        "Date": "Friday, 19 April 2024 19:48:33",
+        "Model": "sonar-medium-chat",
+        "File Name": "ai-benchmarks-descr--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "7.1s",
+        "Total Data Received": "1.96KB",
+        "Average Response Time": "7s",
+        "Date": "Thursday, 18 April 2024 20:56:01",
+        "Model": "sonar-medium-chat",
+        "File Name": "cpdf-annotations--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "7s",
+        "Total Data Received": "1.25KB",
+        "Average Response Time": "7s",
+        "Date": "Wednesday, 08 May 2024 17:04:37",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "prod-markt-fit--editor--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "7.5s",
+        "Total Data Received": "2KB",
+        "Average Response Time": "7.5s",
+        "Date": "Saturday, 04 May 2024 10:01:42",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "linux-lightdm-suspend--it-profi--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1467ms",
+        "Total Data Received": "758B",
+        "Average Response Time": "1420ms",
+        "Date": "Sunday, 19 May 2024 18:26:02",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "tatoos-instruct--headline-generator--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "12.3s",
+        "Total Data Received": "2.93KB",
+        "Average Response Time": "12.2s",
+        "Date": "Thursday, 18 April 2024 20:56:19",
+        "Model": "sonar-medium-online",
+        "File Name": "cpdf-annotations--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "1750ms",
+        "Total Data Received": "420B",
+        "Average Response Time": "1701ms",
+        "Date": "Sunday, 05 May 2024 11:59:11",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "2024-knowledge-cutoff--ask-back--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "1127ms",
+        "Total Data Received": "705B",
+        "Average Response Time": "1077ms",
+        "Date": "Sunday, 05 May 2024 11:58:58",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "2024-knowledge-cutoff--ask-back--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "5.9s",
+        "Total Data Received": "2.71KB",
+        "Average Response Time": "5.8s",
+        "Date": "Friday, 19 April 2024 11:23:56",
+        "Model": "mistral-7b-instruct",
+        "File Name": "synesthesia--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.7s",
+        "Total Data Received": "1.46KB",
+        "Average Response Time": "4.7s",
+        "Date": "Saturday, 04 May 2024 11:46:58",
+        "Model": "sonar-small-online",
+        "File Name": "python-import-from--it-profi--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "3s",
+        "Total Data Received": "1.7KB",
+        "Average Response Time": "2.9s",
+        "Date": "Saturday, 04 May 2024 11:46:31",
+        "Model": "mistral-7b-instruct",
+        "File Name": "python-import-from--it-profi--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "8.5s",
+        "Total Data Received": "2.56KB",
+        "Average Response Time": "8.5s",
+        "Date": "Wednesday, 17 April 2024 22:30:55",
+        "Model": "sonar-medium-online",
+        "File Name": "java-inner-classes--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "8.8s",
+        "Total Data Received": "2.61KB",
+        "Average Response Time": "8.7s",
+        "Date": "Friday, 19 April 2024 11:24:30",
+        "Model": "sonar-medium-chat",
+        "File Name": "synesthesia--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "3.1s",
+        "Total Data Received": "2.35KB",
+        "Average Response Time": "3s",
+        "Date": "Friday, 23 August 2024 09:01:07",
+        "Model": "llama-3.1-8b-instruct",
+        "File Name": "esport-tournaments--None--llama-3.1-8b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.6s",
+        "Total Data Received": "898B",
+        "Average Response Time": "3.5s",
+        "Date": "Thursday, 11 April 2024 23:12:09",
+        "Model": "sonar-medium-online",
+        "File Name": "dukes-in-gb--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "4.6s",
+        "Total Data Received": "1.3KB",
+        "Average Response Time": "4.6s",
+        "Date": "Thursday, 11 April 2024 19:42:24",
+        "Model": "sonar-medium-online",
+        "File Name": "kreuz-schriftzeichen--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "3.2s",
+        "Total Data Received": "2.13KB",
+        "Average Response Time": "3.2s",
+        "Date": "Saturday, 20 April 2024 10:10:13",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "bool-datatype--matht--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.7s",
+        "Total Data Received": "1.97KB",
+        "Average Response Time": "3.7s",
+        "Date": "Wednesday, 17 April 2024 22:30:23",
+        "Model": "mistral-7b-instruct",
+        "File Name": "java-inner-classes--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3s",
+        "Total Data Received": "1.65KB",
+        "Average Response Time": "2.9s",
+        "Date": "Saturday, 04 May 2024 10:01:30",
+        "Model": "mistral-7b-instruct",
+        "File Name": "linux-lightdm-suspend--it-profi--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1637ms",
+        "Total Data Received": "609B",
+        "Average Response Time": "1591ms",
+        "Date": "Friday, 19 April 2024 19:48:10",
+        "Model": "codellama-70b-instruct",
+        "File Name": "ai-benchmarks-descr--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.9s",
+        "Total Data Received": "2.84KB",
+        "Average Response Time": "3.9s",
+        "Date": "Friday, 23 August 2024 09:00:56",
+        "Model": "llama-3.1-sonar-small-128k-chat",
+        "File Name": "esport-tournaments--None--llama-3.1-sonar-small-128k-chat.html"
+    },
+    {
+        "Total Run Duration": "8.2s",
+        "Total Data Received": "1.69KB",
+        "Average Response Time": "8.1s",
+        "Date": "Saturday, 04 May 2024 10:01:26",
+        "Model": "codellama-70b-instruct",
+        "File Name": "linux-lightdm-suspend--it-profi--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "6s",
+        "Total Data Received": "2.1KB",
+        "Average Response Time": "6s",
+        "Date": "Saturday, 20 April 2024 10:10:31",
+        "Model": "sonar-medium-chat",
+        "File Name": "bool-datatype--matht--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "3.7s",
+        "Total Data Received": "1.4KB",
+        "Average Response Time": "3.7s",
+        "Date": "Wednesday, 08 May 2024 17:04:14",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "prod-markt-fit--editor--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "5.5s",
+        "Total Data Received": "2.26KB",
+        "Average Response Time": "5.5s",
+        "Date": "Sunday, 19 May 2024 17:59:52",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "tatoos-in-pop--aristotle--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "2.2s",
+        "Total Data Received": "1.28KB",
+        "Average Response Time": "2.1s",
+        "Date": "Thursday, 11 April 2024 22:17:44",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "carnage--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "30.6s",
+        "Total Data Received": "2.26KB",
+        "Average Response Time": "30.5s",
+        "Date": "Sunday, 13 October 2024 20:40:10",
+        "Model": "llama-3.1-sonar-huge-128k-online",
+        "File Name": "cost per kg to orbit--None--llama-3.1-sonar-huge-128k-online.html"
+    },
+    {
+        "Total Run Duration": "9.1s",
+        "Total Data Received": "2.67KB",
+        "Average Response Time": "9.1s",
+        "Date": "Saturday, 20 April 2024 10:10:45",
+        "Model": "sonar-medium-online",
+        "File Name": "bool-datatype--matht--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "2s",
+        "Total Data Received": "616B",
+        "Average Response Time": "1994ms",
+        "Date": "Sunday, 05 May 2024 17:25:56",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "ripley-books--ask-back--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "5.1s",
+        "Total Data Received": "1.55KB",
+        "Average Response Time": "5.1s",
+        "Date": "Wednesday, 08 May 2024 17:04:20",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "prod-markt-fit--editor--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "999B",
+        "Average Response Time": "3.2s",
+        "Date": "Sunday, 19 May 2024 18:10:03",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "tatoos-in-pop--headline-generator--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "1984ms",
+        "Total Data Received": "810B",
+        "Average Response Time": "1941ms",
+        "Date": "Sunday, 05 May 2024 17:25:47",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "ripley-books--ask-back--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "6.2s",
+        "Total Data Received": "2.91KB",
+        "Average Response Time": "6.2s",
+        "Date": "Sunday, 19 May 2024 17:59:45",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "tatoos-in-pop--aristotle--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "3.4s",
+        "Total Data Received": "1.74KB",
+        "Average Response Time": "3.4s",
+        "Date": "Saturday, 20 April 2024 10:10:24",
+        "Model": "sonar-small-chat",
+        "File Name": "bool-datatype--matht--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "4.7s",
+        "Total Data Received": "2.76KB",
+        "Average Response Time": "4.7s",
+        "Date": "Sunday, 13 October 2024 20:40:33",
+        "Model": "llama-3.1-8b-instruct",
+        "File Name": "cost per kg to orbit--None--llama-3.1-8b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.1s",
+        "Total Data Received": "2.04KB",
+        "Average Response Time": "4s",
+        "Date": "Thursday, 18 April 2024 20:55:37",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "cpdf-annotations--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "5.8s",
+        "Total Data Received": "3.64KB",
+        "Average Response Time": "5.7s",
+        "Date": "Monday, 01 April 2024 12:00:48",
+        "Model": "mistral-7b-instruct",
+        "File Name": "yago-wikidata--wikipedia--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "26.6s",
+        "Total Data Received": "3.67KB",
+        "Average Response Time": "26.5s",
+        "Date": "Sunday, 19 May 2024 17:47:53",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "parents-house--lifecoach--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "10.1s",
+        "Total Data Received": "3.09KB",
+        "Average Response Time": "10s",
+        "Date": "Thursday, 18 April 2024 22:38:53",
+        "Model": "sonar-medium-online",
+        "File Name": "avalance--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "7.4s",
+        "Total Data Received": "2.47KB",
+        "Average Response Time": "7.3s",
+        "Date": "Thursday, 18 April 2024 22:38:26",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "avalance--None--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.9s",
+        "Total Data Received": "2.57KB",
+        "Average Response Time": "3.9s",
+        "Date": "Wednesday, 17 April 2024 22:30:28",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "java-inner-classes--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1861ms",
+        "Total Data Received": "719B",
+        "Average Response Time": "1810ms",
+        "Date": "Thursday, 11 April 2024 22:17:54",
+        "Model": "sonar-small-online",
+        "File Name": "carnage--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "2.5s",
+        "Total Data Received": "1.05KB",
+        "Average Response Time": "2.4s",
+        "Date": "Friday, 19 April 2024 11:24:33",
+        "Model": "sonar-small-online",
+        "File Name": "synesthesia--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "1370ms",
+        "Total Data Received": "864B",
+        "Average Response Time": "1321ms",
+        "Date": "Friday, 03 May 2024 10:09:56",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "gitlab-issue-mirroring--dev--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.8s",
+        "Total Data Received": "1.21KB",
+        "Average Response Time": "4.7s",
+        "Date": "Thursday, 11 April 2024 22:17:37",
+        "Model": "codellama-70b-instruct",
+        "File Name": "carnage--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1401ms",
+        "Total Data Received": "840B",
+        "Average Response Time": "1354ms",
+        "Date": "Sunday, 05 May 2024 09:56:13",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "2024-knowledge-cutoff--it-profi--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1428ms",
+        "Total Data Received": "738B",
+        "Average Response Time": "1378ms",
+        "Date": "Sunday, 19 May 2024 18:09:52",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "tatoos-in-pop--headline-generator--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "8.8s",
+        "Total Data Received": "2.16KB",
+        "Average Response Time": "8.7s",
+        "Date": "Thursday, 18 April 2024 22:38:08",
+        "Model": "codellama-70b-instruct",
+        "File Name": "avalance--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "721ms",
+        "Total Data Received": "382B",
+        "Average Response Time": "676ms",
+        "Date": "Friday, 19 April 2024 19:48:17",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "ai-benchmarks-descr--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.2s",
+        "Total Data Received": "850B",
+        "Average Response Time": "2.2s",
+        "Date": "Thursday, 11 April 2024 23:12:02",
+        "Model": "sonar-medium-chat",
+        "File Name": "dukes-in-gb--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "16.9s",
+        "Total Data Received": "3.73KB",
+        "Average Response Time": "16.8s",
+        "Date": "Sunday, 19 May 2024 18:00:10",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "tatoos-in-pop--aristotle--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "7.2s",
+        "Total Data Received": "2.19KB",
+        "Average Response Time": "7.1s",
+        "Date": "Friday, 23 August 2024 09:00:30",
+        "Model": "llama-3.1-sonar-large-128k-online",
+        "File Name": "esport-tournaments--None--llama-3.1-sonar-large-128k-online.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "1.74KB",
+        "Average Response Time": "2.8s",
+        "Date": "Thursday, 18 April 2024 22:38:42",
+        "Model": "sonar-small-online",
+        "File Name": "avalance--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "11.5s",
+        "Total Data Received": "3.39KB",
+        "Average Response Time": "11.4s",
+        "Date": "Sunday, 13 October 2024 20:40:27",
+        "Model": "llama-3.1-sonar-large-128k-chat",
+        "File Name": "cost per kg to orbit--None--llama-3.1-sonar-large-128k-chat.html"
+    },
+    {
+        "Total Run Duration": "4.3s",
+        "Total Data Received": "1.92KB",
+        "Average Response Time": "4.2s",
+        "Date": "Monday, 01 April 2024 22:19:37",
+        "Model": "sonar-medium-online",
+        "File Name": "dbpedia-dbp-dbo--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "968B",
+        "Average Response Time": "2.9s",
+        "Date": "Sunday, 19 May 2024 18:26:00",
+        "Model": "llama-3-70b-instruct",
+        "File Name": "tatoos-instruct--headline-generator--llama-3-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "16.5s",
+        "Total Data Received": "3.13KB",
+        "Average Response Time": "16.4s",
+        "Date": "Sunday, 13 October 2024 20:39:38",
+        "Model": "llama-3.1-sonar-large-128k-online",
+        "File Name": "cost per kg to orbit--None--llama-3.1-sonar-large-128k-online.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "2.25KB",
+        "Average Response Time": "3.2s",
+        "Date": "Sunday, 19 May 2024 17:59:38",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "tatoos-in-pop--aristotle--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "10.1s",
+        "Total Data Received": "2.62KB",
+        "Average Response Time": "10s",
+        "Date": "Friday, 19 April 2024 11:24:44",
+        "Model": "sonar-medium-online",
+        "File Name": "synesthesia--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "4.2s",
+        "Total Data Received": "1.71KB",
+        "Average Response Time": "4.2s",
+        "Date": "Thursday, 18 April 2024 22:38:13",
+        "Model": "mistral-7b-instruct",
+        "File Name": "avalance--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "7.3s",
+        "Total Data Received": "1.95KB",
+        "Average Response Time": "7.3s",
+        "Date": "Saturday, 20 April 2024 10:10:05",
+        "Model": "codellama-70b-instruct",
+        "File Name": "bool-datatype--matht--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "8.6s",
+        "Total Data Received": "2.17KB",
+        "Average Response Time": "8.6s",
+        "Date": "Friday, 19 April 2024 19:48:49",
+        "Model": "sonar-medium-online",
+        "File Name": "ai-benchmarks-descr--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "3.6s",
+        "Total Data Received": "1.34KB",
+        "Average Response Time": "3.6s",
+        "Date": "Sunday, 05 May 2024 09:56:22",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "2024-knowledge-cutoff--it-profi--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "8.4s",
+        "Total Data Received": "1.48KB",
+        "Average Response Time": "8.3s",
+        "Date": "Wednesday, 08 May 2024 17:04:29",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "prod-markt-fit--editor--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "910ms",
+        "Total Data Received": "406B",
+        "Average Response Time": "865ms",
+        "Date": "Sunday, 05 May 2024 09:56:24",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "2024-knowledge-cutoff--it-profi--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "12.1s",
+        "Total Data Received": "2.54KB",
+        "Average Response Time": "12s",
+        "Date": "Sunday, 19 May 2024 18:00:23",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "tatoos-in-pop--aristotle--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "5.9s",
+        "Total Data Received": "2.82KB",
+        "Average Response Time": "5.9s",
+        "Date": "Friday, 23 August 2024 09:01:03",
+        "Model": "llama-3.1-sonar-large-128k-chat",
+        "File Name": "esport-tournaments--None--llama-3.1-sonar-large-128k-chat.html"
+    },
+    {
+        "Total Run Duration": "3s",
+        "Total Data Received": "1.02KB",
+        "Average Response Time": "3s",
+        "Date": "Thursday, 11 April 2024 22:17:41",
+        "Model": "mistral-7b-instruct",
+        "File Name": "carnage--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.2s",
+        "Total Data Received": "1.71KB",
+        "Average Response Time": "4.1s",
+        "Date": "Saturday, 04 May 2024 10:02:00",
+        "Model": "sonar-medium-online",
+        "File Name": "linux-lightdm-suspend--it-profi--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "1m 0.6s",
+        "Total Data Received": "16.56KB",
+        "Average Response Time": "1m 0.5s",
+        "Date": "Thursday, 18 April 2024 20:55:27",
+        "Model": "codellama-70b-instruct",
+        "File Name": "cpdf-annotations--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1317ms",
+        "Total Data Received": "656B",
+        "Average Response Time": "1268ms",
+        "Date": "Thursday, 11 April 2024 22:17:47",
+        "Model": "sonar-small-chat",
+        "File Name": "carnage--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "2KB",
+        "Average Response Time": "3.3s",
+        "Date": "Thursday, 18 April 2024 22:38:18",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "avalance--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "5.5s",
+        "Total Data Received": "1.95KB",
+        "Average Response Time": "5.5s",
+        "Date": "Saturday, 20 April 2024 10:10:19",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "bool-datatype--matht--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1291ms",
+        "Total Data Received": "905B",
+        "Average Response Time": "1231ms",
+        "Date": "Thursday, 11 April 2024 23:11:57",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "dukes-in-gb--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.4s",
+        "Total Data Received": "1.14KB",
+        "Average Response Time": "2.3s",
+        "Date": "Saturday, 04 May 2024 10:01:48",
+        "Model": "sonar-medium-chat",
+        "File Name": "linux-lightdm-suspend--it-profi--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "5.8s",
+        "Total Data Received": "2.81KB",
+        "Average Response Time": "5.7s",
+        "Date": "Sunday, 19 May 2024 18:09:59",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "tatoos-in-pop--headline-generator--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "2.2s",
+        "Total Data Received": "1.07KB",
+        "Average Response Time": "2.1s",
+        "Date": "Saturday, 04 May 2024 10:01:45",
+        "Model": "sonar-small-chat",
+        "File Name": "linux-lightdm-suspend--it-profi--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "3.1s",
+        "Total Data Received": "802B",
+        "Average Response Time": "3s",
+        "Date": "Thursday, 11 April 2024 22:17:58",
+        "Model": "sonar-medium-online",
+        "File Name": "carnage--None--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "2.5s",
+        "Total Data Received": "906B",
+        "Average Response Time": "2.5s",
+        "Date": "Sunday, 05 May 2024 11:59:03",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "2024-knowledge-cutoff--ask-back--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "3.5s",
+        "Total Data Received": "2.07KB",
+        "Average Response Time": "3.4s",
+        "Date": "Sunday, 19 May 2024 17:47:08",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "parents-house--lifecoach--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "1142ms",
+        "Total Data Received": "568B",
+        "Average Response Time": "1091ms",
+        "Date": "Thursday, 11 April 2024 19:42:11",
+        "Model": "sonar-small-chat",
+        "File Name": "kreuz-schriftzeichen--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "2.4s",
+        "Total Data Received": "852B",
+        "Average Response Time": "2.4s",
+        "Date": "Thursday, 11 April 2024 19:42:18",
+        "Model": "sonar-small-online",
+        "File Name": "kreuz-schriftzeichen--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "7.4s",
+        "Total Data Received": "2.15KB",
+        "Average Response Time": "7.4s",
+        "Date": "Wednesday, 17 April 2024 22:30:18",
+        "Model": "codellama-70b-instruct",
+        "File Name": "java-inner-classes--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.5s",
+        "Total Data Received": "1.62KB",
+        "Average Response Time": "4.5s",
+        "Date": "Thursday, 18 April 2024 20:55:32",
+        "Model": "mistral-7b-instruct",
+        "File Name": "cpdf-annotations--None--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.8s",
+        "Total Data Received": "1.25KB",
+        "Average Response Time": "2.8s",
+        "Date": "Friday, 03 May 2024 10:10:12",
+        "Model": "sonar-medium-online",
+        "File Name": "gitlab-issue-mirroring--dev--sonar-medium-online.html"
+    },
+    {
+        "Total Run Duration": "5.2s",
+        "Total Data Received": "1.68KB",
+        "Average Response Time": "5.2s",
+        "Date": "Saturday, 04 May 2024 10:01:55",
+        "Model": "sonar-small-online",
+        "File Name": "linux-lightdm-suspend--it-profi--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "4.6s",
+        "Total Data Received": "1.77KB",
+        "Average Response Time": "4.5s",
+        "Date": "Sunday, 13 October 2024 20:39:20",
+        "Model": "llama-3.1-sonar-small-128k-online",
+        "File Name": "cost per kg to orbit--None--llama-3.1-sonar-small-128k-online.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "1.52KB",
+        "Average Response Time": "3.2s",
+        "Date": "Sunday, 05 May 2024 09:56:18",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "2024-knowledge-cutoff--it-profi--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "7.3s",
+        "Total Data Received": "1.52KB",
+        "Average Response Time": "7.2s",
+        "Date": "Thursday, 11 April 2024 23:11:52",
+        "Model": "codellama-70b-instruct",
+        "File Name": "dukes-in-gb--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "6.9s",
+        "Total Data Received": "2.95KB",
+        "Average Response Time": "6.8s",
+        "Date": "Sunday, 19 May 2024 17:55:07",
+        "Model": "llama-3-sonar-small-32k-chat",
+        "File Name": "tatoos-in-pop--cosmetics--llama-3-sonar-small-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "5.3s",
+        "Total Data Received": "2.47KB",
+        "Average Response Time": "5.3s",
+        "Date": "Friday, 19 April 2024 11:24:20",
+        "Model": "sonar-small-chat",
+        "File Name": "synesthesia--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "3.2s",
+        "Total Data Received": "1.46KB",
+        "Average Response Time": "3.2s",
+        "Date": "Saturday, 20 April 2024 10:10:35",
+        "Model": "sonar-small-online",
+        "File Name": "bool-datatype--matht--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "16s",
+        "Total Data Received": "3.4KB",
+        "Average Response Time": "16s",
+        "Date": "Sunday, 19 May 2024 17:55:30",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "tatoos-in-pop--cosmetics--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "3.5s",
+        "Total Data Received": "2.49KB",
+        "Average Response Time": "3.4s",
+        "Date": "Sunday, 13 October 2024 20:40:14",
+        "Model": "llama-3.1-sonar-small-128k-chat",
+        "File Name": "cost per kg to orbit--None--llama-3.1-sonar-small-128k-chat.html"
+    },
+    {
+        "Total Run Duration": "3.3s",
+        "Total Data Received": "1.63KB",
+        "Average Response Time": "3.3s",
+        "Date": "Thursday, 18 April 2024 20:55:53",
+        "Model": "sonar-small-chat",
+        "File Name": "cpdf-annotations--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "3.9s",
+        "Total Data Received": "1.56KB",
+        "Average Response Time": "3.8s",
+        "Date": "Thursday, 18 April 2024 20:56:06",
+        "Model": "sonar-small-online",
+        "File Name": "cpdf-annotations--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "4.3s",
+        "Total Data Received": "1.87KB",
+        "Average Response Time": "4.2s",
+        "Date": "Wednesday, 17 April 2024 22:30:45",
+        "Model": "sonar-small-online",
+        "File Name": "java-inner-classes--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "948B",
+        "Average Response Time": "2.9s",
+        "Date": "Thursday, 11 April 2024 19:42:15",
+        "Model": "sonar-medium-chat",
+        "File Name": "kreuz-schriftzeichen--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "2.5s",
+        "Total Data Received": "1.41KB",
+        "Average Response Time": "2.4s",
+        "Date": "Saturday, 04 May 2024 10:01:33",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "linux-lightdm-suspend--it-profi--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "5.1s",
+        "Total Data Received": "3.11KB",
+        "Average Response Time": "5.1s",
+        "Date": "Friday, 19 April 2024 11:24:02",
+        "Model": "mixtral-8x7b-instruct",
+        "File Name": "synesthesia--None--mixtral-8x7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "18.5s",
+        "Total Data Received": "4.29KB",
+        "Average Response Time": "18.4s",
+        "Date": "Friday, 19 April 2024 11:23:49",
+        "Model": "codellama-70b-instruct",
+        "File Name": "synesthesia--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.8s",
+        "Total Data Received": "847B",
+        "Average Response Time": "3.7s",
+        "Date": "Sunday, 05 May 2024 11:59:08",
+        "Model": "llama-3-sonar-large-32k-chat",
+        "File Name": "2024-knowledge-cutoff--ask-back--llama-3-sonar-large-32k-chat.html"
+    },
+    {
+        "Total Run Duration": "1946ms",
+        "Total Data Received": "525B",
+        "Average Response Time": "1896ms",
+        "Date": "Friday, 03 May 2024 10:10:08",
+        "Model": "sonar-small-online",
+        "File Name": "gitlab-issue-mirroring--dev--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "1561ms",
+        "Total Data Received": "412B",
+        "Average Response Time": "1513ms",
+        "Date": "Sunday, 05 May 2024 09:56:26",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "2024-knowledge-cutoff--it-profi--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "7.4s",
+        "Total Data Received": "981B",
+        "Average Response Time": "7.4s",
+        "Date": "Sunday, 19 May 2024 18:10:16",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "tatoos-in-pop--headline-generator--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "3.2s",
+        "Total Data Received": "1.1KB",
+        "Average Response Time": "3.1s",
+        "Date": "Thursday, 11 April 2024 22:17:51",
+        "Model": "sonar-medium-chat",
+        "File Name": "carnage--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "20.1s",
+        "Total Data Received": "1.41KB",
+        "Average Response Time": "20s",
+        "Date": "Friday, 23 August 2024 09:00:51",
+        "Model": "llama-3.1-sonar-huge-128k-online",
+        "File Name": "esport-tournaments--None--llama-3.1-sonar-huge-128k-online.html"
+    },
+    {
+        "Total Run Duration": "5.3s",
+        "Total Data Received": "1.72KB",
+        "Average Response Time": "5.3s",
+        "Date": "Friday, 19 April 2024 19:48:40",
+        "Model": "sonar-small-online",
+        "File Name": "ai-benchmarks-descr--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "1552ms",
+        "Total Data Received": "796B",
+        "Average Response Time": "1494ms",
+        "Date": "Friday, 03 May 2024 10:09:54",
+        "Model": "mistral-7b-instruct",
+        "File Name": "gitlab-issue-mirroring--dev--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "6.4s",
+        "Total Data Received": "1.99KB",
+        "Average Response Time": "6.4s",
+        "Date": "Thursday, 18 April 2024 22:38:38",
+        "Model": "sonar-medium-chat",
+        "File Name": "avalance--None--sonar-medium-chat.html"
+    },
+    {
+        "Total Run Duration": "5.4s",
+        "Total Data Received": "2.35KB",
+        "Average Response Time": "5.3s",
+        "Date": "Sunday, 19 May 2024 17:55:13",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "tatoos-in-pop--cosmetics--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "4.7s",
+        "Total Data Received": "1.39KB",
+        "Average Response Time": "4.6s",
+        "Date": "Thursday, 11 April 2024 19:42:02",
+        "Model": "codellama-70b-instruct",
+        "File Name": "kreuz-schriftzeichen--None--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "11.3s",
+        "Total Data Received": "2.98KB",
+        "Average Response Time": "11.3s",
+        "Date": "Monday, 01 April 2024 12:00:42",
+        "Model": "codellama-70b-instruct",
+        "File Name": "yago-wikidata--wikipedia--codellama-70b-instruct.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "1.34KB",
+        "Average Response Time": "2.9s",
+        "Date": "Monday, 01 April 2024 22:19:32",
+        "Model": "sonar-small-online",
+        "File Name": "dbpedia-dbp-dbo--None--sonar-small-online.html"
+    },
+    {
+        "Total Run Duration": "2.4s",
+        "Total Data Received": "714B",
+        "Average Response Time": "2.4s",
+        "Date": "Sunday, 05 May 2024 17:25:53",
+        "Model": "llama-3-sonar-small-32k-online",
+        "File Name": "ripley-books--ask-back--llama-3-sonar-small-32k-online.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "2.34KB",
+        "Average Response Time": "2.8s",
+        "Date": "Sunday, 19 May 2024 18:25:56",
+        "Model": "llama-3-8b-instruct",
+        "File Name": "tatoos-instruct--headline-generator--llama-3-8b-instruct.html"
+    },
+    {
+        "Total Run Duration": "4.4s",
+        "Total Data Received": "1.48KB",
+        "Average Response Time": "4.3s",
+        "Date": "Friday, 19 April 2024 19:48:22",
+        "Model": "mixtral-8x22b-instruct",
+        "File Name": "ai-benchmarks-descr--None--mixtral-8x22b-instruct.html"
+    },
+    {
+        "Total Run Duration": "3.5s",
+        "Total Data Received": "1.79KB",
+        "Average Response Time": "3.5s",
+        "Date": "Saturday, 20 April 2024 10:10:09",
+        "Model": "mistral-7b-instruct",
+        "File Name": "bool-datatype--matht--mistral-7b-instruct.html"
+    },
+    {
+        "Total Run Duration": "10.6s",
+        "Total Data Received": "2.2KB",
+        "Average Response Time": "10.5s",
+        "Date": "Sunday, 19 May 2024 17:55:42",
+        "Model": "llama-3-sonar-large-32k-online",
+        "File Name": "tatoos-in-pop--cosmetics--llama-3-sonar-large-32k-online.html"
+    },
+    {
+        "Total Run Duration": "3.1s",
+        "Total Data Received": "1.62KB",
+        "Average Response Time": "3s",
+        "Date": "Wednesday, 17 April 2024 22:30:32",
+        "Model": "sonar-small-chat",
+        "File Name": "java-inner-classes--None--sonar-small-chat.html"
+    },
+    {
+        "Total Run Duration": "2.9s",
+        "Total Data Received": "1.23KB",
+        "Average Response Time": "2.8s",
+        "Date": "Friday, 23 August 2024 09:00:22",
+        "Model": "llama-3.1-sonar-small-128k-online",
+        "File Name": "esport-tournaments--None--llama-3.1-sonar-small-128k-online.html"
+    },
+    {
+        "Total Run Duration": "3.5s",
+        "Total Data Received": "1.26KB",
+        "Average Response Time": "3.5s",
+        "Date": "Saturday, 04 May 2024 11:47:03",
+        "Model": "sonar-medium-online",
+        "File Name": "python-import-from--it-profi--sonar-medium-online.html"
+    }
+]
