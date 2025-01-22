@@ -54,9 +54,11 @@ class ModelProcessor:
             return models
 
     def process_models(self, models, args, collection_file, modif_environment_file, query_dir, html_outdir, json_outdir):
-        filtered_models = self.filter_models(models, args) # Filter the models based on the model_type argument
+        # Filter the models based on the model_type argument
+        filtered_models = self.filter_models(models, args) 
         for model in filtered_models:
-            prompt_json = self.generate_prompt_json(args.persona, args.prompt, model) # Call the generate_prompt_json method using the modelprocessor instance
+            # Call the generate_prompt_json method using the modelprocessor instance
+            prompt_json = self.generate_prompt_json(args.persona, args.prompt, model) 
             query_file, outfile_html = self.save_query_file(model, args.slug, args.persona_slug, prompt_json, collection_file, query_dir)
             self.execute_newman(query_file, modif_environment_file, outfile_html, html_outdir, args.prompt, model)
             self.process_report(outfile_html, html_outdir, json_outdir, args.slug, args.persona_slug, model, args.verbose)
@@ -101,6 +103,7 @@ class ModelProcessor:
             "--reporter-htmlextra-title",
             f"{model}: {prompt}"
         ]
+        #print(f"Executing: {' '.join(command)}")
         subprocess.run(command)
 
 

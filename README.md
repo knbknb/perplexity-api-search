@@ -1,21 +1,24 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
-# Obsolete - Perplexity.ai API redesigned
+# Obsolete - (Perplexity.ai API redesigned)
 
 ```text
 Perplexity.ai API redesigned and rebranded in early 2025.
-The 2024 API endpoints mentioned in this repo are not available anymore.
+The 2024 LLMs mentioned in this repo are not available anymore as API endpoints on Perplexity.ai.
+
+Besides, 
+- the code in this repo was more a personal learning tool than a practical one.  
+- this repo implements an  incredibly awkward and convoluted way to interact with the Perplexity API.
+- in 2023-2024 there were ~10 models available via the Perplexity API. Those were rather diverse and
+- in 2025, the ~5 current models are kind of similar.
+
 ```
 
 ### Batch Prompting the Perplexity Web-APIs
 
-... with Python + Postman/Newman.  
+In 2024, the [Perplexity API endpoints](https://docs.perplexity.ai/docs/model-cards)   were actually just "wrappers" or fine-tuned variants of Meta's important family of models, the [Llama models](https://github.com/meta-llama/). So those models were worth exploring via the Perplexity API. I know that there are many other ways to interact with the Llama models, but I 
+wanted to try this one.
+
 A command-line script that will create _very_ verbose output with many details of the API requests and responses. The output is saved in a markdown textfile in `final_output/` directory.
-
-```text
-It is more a learning tool than a practical one.  
-```
-
-The [Perplexity API endpoints](https://docs.perplexity.ai/docs/model-cards)   are actually just "wrappers" or fine-tuned variants of Meta's important family of models, the [Llama models](https://github.com/meta-llama/). So it is worth exploring them via that API. I know that there are many other ways to interact with the Llama models, but I wanted to try this one.
 
 #### In a Linux terminal, send your human-language queries to Perplexity.ai's variants of Meta-Llama LLMs.  
 
@@ -36,14 +39,3 @@ See [INSTALL.md](./doc/INSTALL.md) -- [README-python.md](./doc/README-python.md)
 
 Use it as you like.
 
-## Note
-
-For simpler batch prompting via the command line, I recommend Simon Willison's [llm](https://github.com/simonw/llm) tool, `pip install llm`.
-
-`llm "Where is Plutonia?"  # single query`  
-
-Small batch:
-
-    for loc in 'Literature' 'Computer Gaming'; do llm "Where is Plutonia in $loc?"; done
-
-(Requires API keys for LLMs as well.)

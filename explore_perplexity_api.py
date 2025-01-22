@@ -39,13 +39,13 @@ def check_prerequisites(api_key, tools, directories):
         validator.check_tools(tools)                # cli tools installed?
         validator.check_directories(directories)    # local subdirectories exist?
 
-def get_model_list():
+def get_model_list(modellist_url=None):
      #!/usr/bin/env python
     import requests
     from bs4 import BeautifulSoup
-
+    assert modellist_url is not None, "modellist_url is required"
     # Fetch the HTML
-    response = requests.get(os.getenv('PERPLEXITY_MODELCARD_URL'))
+    response = requests.get(modellist_url)
 
     # Parse the HTML
     soup = BeautifulSoup(response.text, 'html.parser')
@@ -59,7 +59,7 @@ def get_model_list():
         for row in table.find_all('tr'):
             cells = [cell.text for cell in row.find_all('td')]
         #    print(' '.join(cell.text for cell in row.find_all('td')))        # simpler version
-            if len(cells) == 4 :
+            if len(cells) == 3 :
                 model_names.append(cells[0].strip())
         return model_names
 
@@ -75,7 +75,8 @@ def main(api_key):
     #(args.prompt, args.slug)
     directories = ['queries', 'json_extracted', 'newman', 'final_output']
     tools = ['newman']
-    models = get_model_list()
+    models = get_model_list(modellist_url=os.getenv('PERPLEXITY_MODELCARD_URL'))
+    print (f"Models: {models}")
     check_prerequisites(api_key, tools, directories)
     write_pm_env_file(models, "postman/perplexity-API-export-environment.json",
                                        "postman/perplexity-API-export-environment-with-cleartext-key.json",
