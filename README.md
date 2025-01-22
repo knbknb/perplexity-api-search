@@ -1,8 +1,11 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
 # Obsolete - (Perplexity.ai API redesigned)
 
+##### Send out 5-10 prompts at once, collect the LLM responses in a textfile.
+
 ```text
-Perplexity.ai API redesigned and rebranded in early 2025.
+Code in repo is obsolete in 2025  
+Perplexity.ai API was redesigned and rebranded.
 
 Besides, 
 - the code in this repo was more a personal learning tool than a practical one.  
@@ -30,6 +33,9 @@ A spare-time project to explore the [Perplexity.ai API endpoint paths](https://b
   --prompt "What is the name of the Song by Adriano Celentano \
     that has lyrics in fake English language?" 
 ```
+
+#### This command will send your prompt to all the models available via the Perplexity API (n = 5 in early 2025), and save the consolidated responses in a markdown textfile.
+
 
 - You need to have a Perplexity API key. Set it in the environment variable `PERPLEXITY_API_KEY` in an `.env`.
 - You need to have "Newman" installed. It is a command-line tool for running Postman collections. Python class `model_processor.py` calls this.
