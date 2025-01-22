@@ -1,5 +1,12 @@
 <!-- markdownlint-disable MD001 MD022 MD026  -->
-# Batch Prompting the Perplexity Web-APIs
+# Obsolete - Perplexity.ai API redesigned
+
+```text
+Perplexity.ai API redesigned and rebranded in early 2025.
+The 2024 API endpoints mentioned in this repo are not available anymore.
+```
+
+### Batch Prompting the Perplexity Web-APIs
 
 ... with Python + Postman/Newman.  
 A command-line script that will create _very_ verbose output with many details of the API requests and responses. The output is saved in a markdown textfile in `final_output/` directory.
