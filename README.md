@@ -3,12 +3,13 @@
 
 ```text
 Perplexity.ai API redesigned and rebranded in early 2025.
-The 2024 LLMs mentioned in this repo are not available anymore as API endpoints on Perplexity.ai.
 
 Besides, 
 - the code in this repo was more a personal learning tool than a practical one.  
-- this repo implements an  incredibly awkward and convoluted way to interact with the Perplexity API.
-- in 2023-2024 there were ~10 models available via the Perplexity API. Those were rather diverse and
+- this repo implements an  incredibly awkward  
+  and convoluted way to interact with the Perplexity API.
+- in 2023-2024 there were ~10 models available via the Perplexity API.  
+  Those were rather diverse.
 - in 2025, the ~5 current models are kind of similar.
 
 ```

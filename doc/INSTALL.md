@@ -49,7 +49,7 @@ For the Python script [explore_perplexity_api.py](../explore_perplexity_api.py),
 
 - `node`, the JavaScript runtime
 - `newman`, the Postman CLI, a `node` package
-
+- `newman-reporter-htmlextra`, a `node` package, an extension for `newman`
 Use the Python script.
 
 ##### Prerequsites - shell script
