@@ -11,16 +11,15 @@ Besides,
 - the code in this repo was more a personal learning tool than a practical one.  
 - this repo implements an  incredibly awkward  
   and convoluted way to interact with the Perplexity API.
-- in 2023-2024 there were ~10 models available via the Perplexity API.  
-  Those were rather diverse.
-- in 2025, the ~5 current models are kind of similar.
+- in 2023-2024 there were ~10 models available via the Perplexity API .  
+  Those were rather diverse, from different vendors.
+- in 2025, the ~5 current models are kind of similar, built by Perplexity independently.  
+  Maybe based on DeepSeek's open-source/openweights LLMs, but not sure.
 
 ```
 
 ### Batch Prompting the Perplexity Web-APIs
 
-In 2024, the [Perplexity API endpoints](https://docs.perplexity.ai/docs/model-cards)   were actually just "wrappers" or fine-tuned variants of Meta's important family of models, the [Llama models](https://github.com/meta-llama/). So those models were worth exploring via the Perplexity API. I know that there are many other ways to interact with the Llama models, but I 
-wanted to try this one.
 
 A command-line script that will create _very_ verbose output with many details of the API requests and responses. The output is saved in a markdown textfile in `final_output/` directory.
 
@@ -34,7 +33,9 @@ A spare-time project to explore the [Perplexity.ai API endpoint paths](https://b
     that has lyrics in fake English language?" 
 ```
 
-#### This command will send your prompt to all the models available via the Perplexity API (n = 5 in early 2025), and save the consolidated responses in a markdown textfile.
+[See results](doc/README-python.md).
+
+#### This command will send your prompt to all the models available via the Perplexity API (n = ~5 in early 2025), and save the consolidated responses in a markdown textfile.
 
 
 - You need to have a Perplexity API key. Set it in the environment variable `PERPLEXITY_API_KEY` in an `.env`.
