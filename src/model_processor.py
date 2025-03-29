@@ -29,29 +29,14 @@ class ModelProcessor:
             json.dump(json_data, f)
 
     # add a function filter_models to filter the models based on the model_list:
-    # if argument "model-type" is not provided, return all models
-    # if model type is "small" return only the small models
+    # if argument "model" is not provided, return all models
+    # else args.model is a search string
     def filter_models(self, models, args):
-        model_type = args.model_type
-
-        if not model_type:
+        if not args.model:
             return models
-        elif model_type == "small":
-            return [model for model in models if "small" in model]
-        elif model_type == "online":
-            # It is recommended to use only single-turn conversations 
-            # and avoid system prompts for the online LLMs (sonar-small-online and sonar-medium-online).
-            if args.persona:
-                print("Warning: Online models ignore the custom instruction and are not recommended for multi-turn conversations")
-                args.persona = "ignored-for-online-models"
-            return [model for model in models if "online" in model]
-        elif model_type == "instruct":
-            return [model for model in models if "instruct" in model]
-        elif model_type == "chat":
-            # filter for 8x7b, 34B, 70B by using a regex 
-            return [model for model in models if re.search(r'(chat)', model)]
         else:
-            return models
+            return [m for m in models if re.search(args.model, m, re.IGNORECASE)]
+            
 
     def process_models(self, models, args, collection_file, modif_environment_file, query_dir, html_outdir, json_outdir):
         # Filter the models based on the model_type argument
@@ -59,7 +44,7 @@ class ModelProcessor:
         for model in filtered_models:
             # Call the generate_prompt_json method using the modelprocessor instance
             prompt_json = self.generate_prompt_json(args.persona, args.prompt, model) 
-            query_file, outfile_html = self.save_query_file(model, args.slug, args.persona_slug, prompt_json, collection_file, query_dir)
+            query_file, outfile_html = self.save_query_file(model, args.slug, prompt_json, collection_file, query_dir, args.persona_slug)
             self.execute_newman(query_file, modif_environment_file, outfile_html, html_outdir, args.prompt, model)
             self.process_report(outfile_html, html_outdir, json_outdir, args.slug, args.persona_slug, model, args.verbose)
 
@@ -71,7 +56,7 @@ class ModelProcessor:
         return prompt_json
 
 
-    def save_query_file(self, model, slug, persona_slug, prompt_json, collection_file, query_dir):
+    def save_query_file(self, model, slug, prompt_json, collection_file, query_dir, persona_slug):
         outfile_json = f"{slug}--{persona_slug}--{model}.json"
         query_file = os.path.join(query_dir, outfile_json)
         with open(collection_file, 'r') as f:

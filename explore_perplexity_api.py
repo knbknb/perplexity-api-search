@@ -28,8 +28,8 @@ def parse_arguments():
     parser.add_argument('--prompt', required=True, help='Your question or task')
     parser.add_argument('--slug', required=True, help='Prompt slug')
     parser.add_argument('--persona', default="Default Persona", help='Persona')
-    parser.add_argument('--persona-slug', help='Persona slug')
-    parser.add_argument('--model-type', help='Model type to use (small, online, instruct, chat)')
+    parser.add_argument('--persona-slug', help='Persona slug', default="NoRole")
+    parser.add_argument('--model', help='Model to use (filter by this string)')
     parser.add_argument('--verbose', action='store_true', help='Verbose output')
     return parser.parse_args()
 
@@ -40,32 +40,20 @@ def check_prerequisites(api_key, tools, directories):
         validator.check_directories(directories)    # local subdirectories exist?
 
 def get_model_list(modellist_url=None):
-     #!/usr/bin/env python
-    import requests
+    if not modellist_url:
+        raise ValueError("Model list URL is required.")
     from bs4 import BeautifulSoup
-    assert modellist_url is not None, "modellist_url is required"
-    # Fetch the HTML
+    import requests
     response = requests.get(modellist_url)
-
-    # Parse the HTML
+    if response.status_code != 200:
+        raise ValueError(f"Failed to fetch model list from {modellist_url}. Status code: {response.status_code}")
     soup = BeautifulSoup(response.text, 'html.parser')
 
     # Find the first and second tables
-    tables = soup.find_all('table')
-
-    # Function to print table rows as text, formatted as a table (lpad, rpad)
-    def get_model_names(table):
-        model_names = []
-        for row in table.find_all('tr'):
-            cells = [cell.text for cell in row.find_all('td')]
-        #    print(' '.join(cell.text for cell in row.find_all('td')))        # simpler version
-            if len(cells) == 3 :
-                model_names.append(cells[0].strip())
-        return model_names
-
-    model_names = []
-    for table in tables:
-        model_names.extend(get_model_names(table))
+    card_headers = soup.find_all('h2', attrs={'contenteditable': 'false'})
+    card_headers_clean = [h.get_text().strip() for h in card_headers]
+    
+    model_names = [header for header in card_headers_clean]
 
     return model_names
 
